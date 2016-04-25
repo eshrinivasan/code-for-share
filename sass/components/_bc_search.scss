@@ -1,0 +1,282 @@
+/*Convert px to em, hierarchy, responsive mq*/
+
+.block--finra-custom-search-blocks{
+	.block__content{
+		border:none;
+
+		h2{
+			margin-top:0.5em;	
+			margin-bottom:0;
+			@include breakpoint($tab-portrait){
+				margin-top:0.25em;
+			}
+		}
+
+		.results-main-count{
+			font-size:0.75em;
+			font-style:normal;
+		}
+	}
+	
+	h2{	//finra rules
+		.l-region--sidebar-third &{
+			margin-top:0;
+			background-color: #c5cfd7;
+			padding:0.315em;
+			font-family:$headings-font-family;
+		}		
+	}
+
+	h3{		
+		padding:0.5em;
+		margin:0.5em 0 0.5em 0.5em;
+	}
+
+	ul.finra-rules,
+	ul.list-unstyled-links{	
+		padding: 0 0.625em;
+		font-size:0.875em;
+
+
+		li{
+			list-style-type:none;
+		}
+	}
+
+	ul.finra-rules{
+		p{
+			font-size:0.875em;
+		}
+	}
+}
+
+.bcsearchul{
+	margin:0;
+	padding:0;	
+	border:none;
+
+	@include sizeDesktop(){
+		border-left: none;
+	}
+
+	li{		
+
+		&:before{
+			display:none;
+		}
+	}
+
+	.nostyle{
+		font-size:1em;
+
+		label{
+			font-family:$headings-font-family;
+		}
+
+		+ .bcsearchListItem {
+			border-top:none;
+		}
+	}
+
+	.nostyle,
+	.bcsearchListItem,
+	.viewMoreListItem{
+		list-style-type:none;
+	}
+
+	.pane-title{
+		margin-top:0;
+		background-color: #c5cfd7;
+		padding:0.5em;
+		font-family:$headings-font-family;
+	}
+
+	.bcsearchListItem,
+	.viewMoreListItem
+	{
+		margin-left:0;
+		padding-left:0;
+		display: inline-block;
+		padding:0.5em;
+		padding-top:.75em;
+		border-top:1px dotted #ccc;
+		width:100%;
+	}
+
+	.bcsearchListItem,
+	.viewMoreListItem .last
+	{
+		margin-left:0;
+		padding-left:0;
+		display: inline-block;
+		padding:0.5em;
+		width:100%;
+	}
+
+	.bcsearchListItem {	
+		padding-top:1em;
+
+		.firmIcon:after{
+			@include fontAwesome("\f1ad", $accent-gray-dark);		
+		}
+
+		.individualIcon:after{
+			@include fontAwesome("\f007", $accent-gray-dark);
+		}
+
+		.bc_viewmore{
+			color:#01467f;
+			font-size: 1em;
+			font-weight: normal;
+		}
+
+		.bc_icon{
+			float:left;
+			
+			&:after{
+				font-size: 2em;
+				margin-right:0.2em;
+			}
+		}
+
+		.rightAlign {
+			float:left;
+			width:84%;
+			padding: 0 0.313em;
+		}
+
+		.bc_status {
+			.inactive{
+				color:$accent-red;
+			}
+
+			.active{
+				color:$black;
+			}
+		}
+
+		.bc_name_crd{
+				.bc_name{
+					font-weight:bold;			
+				}
+
+				.crd{
+					color:#828181;
+					font-weight:normal;
+				}
+		}
+		
+		.bc_altname{
+			margin:0.313em 0;
+			padding:0 0.625em;
+			color:#b4b4b4;
+		}
+
+		.bc_curremployer{
+			font-weight:bold;
+			color:#828181;
+			font-size:0.750em;
+		}
+
+		.bc_tombstone{
+			.disclosureStatus{
+				margin:5px 0;
+			}
+		}
+	}	
+
+	li.viewMoreListItem + li.nostyle {
+		margin-top: 1.25em;
+	}
+
+	.viewMoreListItem{				
+		padding:0 1em 0 2.8em;
+		border:none;
+		font-size:0.875em;
+		text-align:left;
+
+		a{
+			font-size: 0.875em;
+			position: relative;
+  
+			  &:after {
+			    @include fontAwesome("\f105");
+			    font-style: normal;
+			    font-size: em(16);
+			    font-weight: normal;
+			    line-height: 1;
+			    padding-right: 0.9em;
+			    position: absolute;
+			    margin-right: 0;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			  }
+
+			  @include breakpoint ($desk) {
+			    &:after {
+			      content: "\f101";
+			      margin:0.4em 0 0 0.4em;
+			    }
+			  }
+			
+
+		}
+
+	}
+}
+
+/*  New Broker Check Styles.  Above styles to be deleted later. */
+
+.block--finra-custom-search-blocks-broker-check-search-block {
+  .add-finra-bc-widget-search {
+	border: solid 1px $global-blue;
+
+	h3 {
+	  background: $global-blue;
+	  margin:0;
+	  text-align:center;
+	  padding: .5em 1.5em 0;
+
+	  img {
+		max-width:60%;
+
+		@include breakpoint($desk) {
+		  max-width:100%;
+		}
+	  }
+	}
+	.bc_results {
+	  padding:.5em 1em 1em 1.5em;
+
+	  .row {
+		margin:1em 0 0;
+	  }
+	}
+
+	.view-bc {
+	  text-align: center;
+	  font-size: .875em;
+	  margin-bottom: 1em;
+
+	  a {
+		font-weight:bold;
+	  }
+	}
+
+	.bc_icon {
+	  color:$accent-gray-dark;
+	  font-size: 2em;
+	  display: inline-block;
+	  width: 15%;
+	  top:2px;
+	  position: relative;
+	  vertical-align:top;
+	}
+    #individuals_count, #firms_count {
+	  width: 85%;
+	  display: inline-block;
+	  font-size: .80em;
+	}
+
+  }
+}

@@ -1,0 +1,777 @@
+/*
+ * Content area (Primarily Secondary landing pages)
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+.l-content {
+  padding:0 1em 1em 1em;
+  //@media print{padding: 0px 0px 1em 0px}
+
+    @include breakpoint($tab-landscape){
+      padding:0;
+    }
+
+	article {
+        padding-bottom: 1em;
+
+		a[href^=tel] {
+			font-family: $sans-serif-stack-75;
+			color: $article-text;
+		}
+
+        /* Info at the bottom of each article */
+		[class*=field--name] {
+			.field__label {
+				display: inline;
+				margin-right: 0.5em;
+                //width: 118px;
+			}
+		}
+
+		.field--name-body {
+			margin: 1em 0;
+	    	padding: 0 0.5em 1em 0;
+          //  @media print{padding: 0px}
+
+          @include sizeDesktop(){
+            padding: 0 0 1em 0;
+          }
+		}
+
+        .core-title{
+          clear: both;
+        }
+
+        /* Speeches */
+        .field-item-speaker {
+          font-family: $sans-serif-stack-75;
+          color: $lead-text;
+          font-weight:bold;
+          font-size:1.125em;
+        }
+
+        .field-item-title{
+          font-family: $sans-serif-stack-55;
+          font-size:1.125em;
+        }
+
+        .field-item-location {
+          font-size: 1em;
+        }
+
+        /*Commenting out pager
+
+        .pager{
+            display:none;
+            .pager-previous{
+                 display: none;
+            }
+            .pager-current{
+                display:none;
+            }
+            &.pager-load-more{
+                .pager-next{
+                    display: block;
+                    border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    border: 1px solid #ddd;
+                    background: #efefef;
+                    text-align: center;
+                    font-weight: bold;
+                    box-shadow: 2px 2px 2px rgba(50,50,50,.4);
+                    color: #444;
+                    text-decoration: none;
+                    padding: 5px;
+               }
+            }
+
+            &.pager-load-more-empty{
+                    display:none;
+            }
+
+        }*/
+
+
+
+
+        /* News Releases +, Podcast content type */
+
+        .news-rls-logo-images {     // header: image + title
+           // display: table;
+            vertical-align: bottom;
+            text-align:right;
+            width: 100%;
+
+            & > div {
+             //   display: table-cell;
+                display:block;
+                vertical-align: bottom;
+            }
+
+            .field-news-release-label{
+                max-width: 280px
+            }
+        }
+
+        .field--name-field-news-rls-logo-image {        // header: image
+            display: inline;
+            .field__items {
+                .field__item {
+                    display: inline;
+
+                    p {
+                        margin: 0.25em 0;
+                    }
+                }
+            }
+
+            display:none;
+
+            @include breakpoint($tab-portrait){
+                display:inline-block;
+                text-align:right;
+            }
+        }
+
+        .field-news-release-label {     // header: title
+            color: $news-release-header;
+            font-size: 1em;
+            text-align: left;
+            font-weight: bold;
+
+        }
+
+        .field-item-date,
+        .field--type-datetime,//news release official release date, speeches official release date
+        .field--label-inline,
+        .field-speech-date
+
+        {
+            font-size: 0.875em;
+            font-weight:bold;
+            text-transform: uppercase;
+            color: $accent-gray-dark;
+            font-family: $serif-stack;
+            font-style: italic;
+        }
+        .node--podcast--full {
+          .field--name-body {
+            margin-bottom:0px;
+          }
+          .field-item-date {
+            text-transform: none;
+            font-style: normal;
+          }
+
+        }
+        .node--news-release--full {
+            .field{clear:both; margin: 0 0 20px;}
+            .field--label-inline{
+                font-family: $serif-stack;
+            }
+            .field-label + .field-items, .field-label{
+                display: block;
+                width:30%;
+                max-width: 120px;
+                float: left;
+                color:$accent-gray-dark;
+                font-style:italic;
+
+                .clearfix:before{clear: none;display: inline;}
+
+            }
+            .field-label{font-weight: $headings-font-weight; font-size: .9em; color:$accent-gray-dark; font-family: $serif-stack;}
+            .field-label + .field-items{
+                width: 70%;
+                max-width: 70%;
+
+            }
+          .field--name-field-core-official-dt,.field--name-field-news-rls-contact-tx  {
+            text-transform: none;
+            font-weight:bold;
+            font-style: italic;
+          }
+          .field--name-field-news-rls-contact-tx {
+            a {
+              color: $accent-gray-dark;
+            }
+          }
+
+        }
+
+     
+
+        //Podcast Index page date within list-unstyled-links
+        .view-podcasts{
+            .field-item-date{
+              font-size:0.938em;
+            }
+        }
+
+        .views-field-field-podcast-category-tax{
+              &:before{
+                @include fontAwesome("\f02b", $article-text);
+              }
+
+              .field-content{
+                display:inline-block;
+              }
+        }
+
+        .form-item-field-podcast-category-tax-tid{
+          .form-type-bef-link{
+            margin: 0.625em 0;
+          }
+        }
+
+        .field--name-field-news-rls-contact-tx {
+            margin: 0.5em 0 0 0;
+
+            p {
+                margin:0 0 0.25em 0;
+                font-size:1em;
+            }
+
+            .field__label {
+                color: $accent-gray-dark;
+                font-family: $sans-serif-stack-75;
+            }
+
+            .field__item{
+
+            }
+        }
+
+
+
+        .field-item-logo {
+            .field__item {
+                margin: 0 0.25em 0 0;
+            }
+        }
+
+        /* Notices */
+        .field--name-field-notice-topic-tax {
+            .field-item {
+                margin: 0 0.5em 0 0;
+
+                a {
+                    font-size: 0.875em;
+                    color: $accent-red;
+                }
+            }
+        }
+
+        .field--type-file {
+            .field__label {
+                margin: 0.5em 0 -1em;
+                text-transform: uppercase;
+                display: block;
+            }
+        }
+
+        .field--name-field-notice-doc-file-ref {
+            margin: 0 0 1em 0;
+        }
+
+        .notices-core-title {
+            @extend .notice-core-title;
+        }
+
+        .field--name-field-notice-note-tx {
+            font-size:0.875em;
+            font-weight:bold;
+            color:$accent-red;
+        }
+
+        .view-investor-alerts .view-header{
+            @extend .content-background;
+            padding: 1em 0.625em .1em .625em;
+
+            h2{
+              padding: 0 0.5em;
+              margin-top:0.25em;
+            }
+
+            table td{
+              border:none;
+            }
+        }
+    }
+
+    .node--execbio {
+        p {
+            em {
+                margin-bottom: 1em;
+            }
+        }
+
+        .field--type-image {
+            float: right;
+            margin: 0 0 1em 2em;
+        }
+        .field--name-field-exec-bio-title-tx {
+            @extend %subheader;
+        }
+    }
+
+    .view-exec-bios {   // See lists for more styles
+        .attachment {   // Ketchum
+            border-bottom: 1px dotted $accent-gray;
+            display: inline-block;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            width: 100%;
+        }
+        .views-field-field-core-desktop-image {
+            float: left;
+            margin-right: 1em;
+            min-height: 171px;      // given that image is 160px height
+        }
+        .views-field-title {        // name
+            font-weight: bold;
+        }
+        .views-field-field-exec-bio-title-tx {      // title
+            font-size: 0.85em;      // reducing size for long titles
+        }
+        .views-row {
+            @extend .half;
+
+            border-bottom: 0 none;
+            margin-bottom: 1em;
+        }
+
+        @include breakpoint($tab-portrait) {
+            .views-field-title {
+                margin-top: 1em;
+            }
+            .views-field-field-exec-bio-title-tx {      // title
+                font-size: 1em;
+            }
+        }
+
+    }
+
+    .node--investor-book {
+        .book-navigation__links {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            min-height: 22px;
+            a {
+                font-size: 0.875em;
+                margin-bottom: 2em;
+                font-family:$serif-stack;
+
+                .emphasize {
+                    @include red-circle;
+
+                    display: inline-block;
+                    font-size: 1.5em;
+                    height: 1.35em;
+                    line-height: 1.25;
+                    margin-top: -0.35em;
+                    padding: 0;
+                    position: relative;
+                    width: 1.35em;
+                    top:20%;
+                }
+            }
+            .book-navigation__next {
+                position: relative;
+                padding-right: 45px;
+                .emphasize {
+                    margin-left: 0.5em;
+                    background-color: #025191;
+                    position: absolute;
+                    right: 0px;
+
+                }
+            }
+            .book-navigation__previous {
+                position: relative;
+                padding-left: 45px;
+                .emphasize {
+                    margin-right: 0.5em;
+                    background-color: #025191;
+                    position: absolute;
+                    left: 0px;
+
+
+                }
+            }
+        }
+        .book-navigation__up {
+            display: none;
+        }
+        .field--type-text-with-summary {
+            h2 {
+                display: none;
+            }
+        }
+        .blue-highlight, .green-highlight {
+            padding: 1em;
+        }
+    }
+
+    .node--notices {
+        .btn {
+            font-size: 1.250em;
+        }
+
+        h1, h3 {
+            font-family: $sans-serif-stack;
+            font-size: 0.875em;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: $accent-red;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h2 {        // default title
+            font-size: 1.625em;
+            margin-bottom: 8px;     // to match margin-bottom size of h1
+            text-transform: none;
+
+            & + p {
+                margin-top: 0.25em;
+            }
+          &.core-short-title {
+            font-size:1.2em;
+          }
+        }
+
+        .field--name-body {
+            h2 {        // in body; h3
+                font-family: $sans-serif-stack;
+                font-size: 0.875em;
+                font-weight: bold;
+                margin: 2em 0 0;
+            }
+
+            padding-bottom:0;
+        }
+
+        .field--name-field-notice-subtitle-tx,
+        .field--name-field-notice-note {
+            font-size: 0.875em;
+            font-weight: bold;
+            font-family:$sans-serif-stack;
+            font-style:normal;
+            text-transform:none;
+        }
+        .field--name-field-notice-note {
+          color: $accent-red;
+          margin-top:.5em;
+        }
+      &.node--notices--block-view {
+        .field--name-field-notice-subtitle-tx {
+          font-size:.95em;
+        }
+        .notices-core-title {
+          margin-bottom:4px;
+        }
+      }
+    }
+
+  .node--rule-filing {
+    &.node--rule-filing--block-view {
+      .core-short-title {
+        margin-bottom:8px;
+      }
+      .field--name-field-core-official-dt {
+        font-style:normal;
+        text-transform:none;
+        font-size:.95em;
+      }
+    }
+    h2 {
+
+      &.core-short-title {
+        font-size:1.2em;
+      }
+    }
+
+  }
+   .view-professional-designations {
+        .view-content{
+
+            span.views-summary{
+                padding: 0px 3px;
+                white-space: normal;
+                font-size: .75em;
+                color: #999;
+                line-height: 2em;
+
+            }
+            span.views-summary:before{
+                    content: "\2022";
+                    padding-right: 6px;
+                }
+            span.views-summary:first-child:before{
+                    display:none
+                }
+
+            a{
+                font-weight: bold;
+            }
+            table{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.panels-flexible-column-finra_custom_2_column_layout-main,
+.threequarter,
+.article{
+    h2, h3{
+        padding-top:1em;
+
+        @include sizeDesktop(){
+            padding-top:1.145em;     //DRU 1571 - approx 25px
+        }
+    }
+
+    h2{
+        &.pane-title{
+            padding:0 0 .5em 0;
+        }
+    }
+
+    .rounded-corner{
+        h2{
+            padding:0;
+        }
+    }
+}
+//iframe{
+//    @media print{display:none;}
+//}
+
+.block--bean-industry-podcast-buttons-subsc {
+  .bean-finra-buttons {
+    text-align:left;
+  }
+
+}
+.view-display-id-exam_at_a_glance {
+  .view-content {
+    width:100%;
+  }
+  .views-field {
+    height:auto;
+  }
+  .views-view-grid {
+    width:100%;
+
+    td {
+      padding-left:0em;
+      padding-right:0em;
+    }
+    strong {
+      padding:.5em 0 .5em .2em;
+      display:inline-block;
+      width:49%;
+      vertical-align: top;
+      height: 100%;
+    }
+    .field-content {
+      padding:.5em 0;
+      display:inline-block;
+      width:49%;
+    }
+    .views-field-field-se-num-of-items,
+    .views-field-field-se-duration,
+    .views-field-field-se-prereq,
+    .views-field-field-se-effect-date {
+      background-color: $accent-gray-light;
+    }
+  }
+}
+.has-sidebar-third {
+  article {
+    margin-right:1em;
+  }
+  .l-content {
+    border-right: 1px solid $accent-gray;
+    margin-bottom: 1em;
+  }
+}
+.node-type-notices {
+  .field--name-field-notice-subtitle-tx {
+    &.field-item-date {
+      text-transform:none;
+    }
+  }
+  .notices-core-title {
+    margin-top: 1.25em;
+  }
+  .field--name-field-notice-title-tx {
+    h2 {
+      margin-top: .25em;
+    }
+  }
+}
+.block--bean-podcast-generic-note {
+  .bean-text {
+    .field--name-field-text-bean-body {
+      margin-top:40px;
+      font-size:.875em;
+    }
+}
+}
+//.tabs, .workbench-info-block {
+//  @media print {
+//    display:none;
+//  }
+//}
+
+.page-finra-404 {
+  .field--name-field-text-bean-body {
+    margin-bottom:0;
+    p {
+      margin-bottom:0;
+    }
+  }
+  .node--corporate--full {
+    h2 {
+      margin-top:0px;
+    }
+  }
+  .pane-bean-404-page-site-map-text {
+    padding-top:1em;
+  }
+}
+.node--investor-alert--full {
+  .field-label {
+    display:inline-block;
+  }
+  .field-label + .field-items {
+    display:inline-block;
+  }
+  .field--name-field-core-official-dt.field-item-date {
+    font-weight:normal;
+    text-transform:none;
+    font-style:normal;
+    font-size:1em;
+    color:$article-text;
+    font-family:$sans-serif-stack;
+  }
+}
+.sharethis-wrapper {
+  .stButton {
+    .stMainServices {
+      height:28px;
+    }
+  }
+}
+.view-in-the-media.view-display-id-page {
+  ul.list-unstyled-links {
+    li a {
+      font-size:1.07em;
+    }
+  }
+}
+.view li {
+  .views-field-field-core-official-dt {
+    .date-display-single {
+      font-size: 0.875em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $accent-gray-dark;
+      font-family: $serif-stack;
+      font-style: italic;
+    }
+  }
+}
+.view-display-id-exam_99,.full-width {
+  table {
+    width:100%;
+  }
+}
+
+.file-image {
+  display:none;
+
+  @include breakpoint($tab-portrait) {
+    display:block;
+    position:relative;
+    left:0px;
+  }
+
+  .pdfpreview-image-wrapper img {
+    border: 1px solid #e0e0e0;
+  }
+}
+
+.file-description {
+  top:0;
+  position:relative;
+  @include breakpoint($tab-portrait) {
+    top: 120px;
+    width: 35%;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+}
+.automatic-redirect-countdown {
+  font-size: 0.875em;
+}
+.view-display-id-recent_investor_alerts_block_2column {
+  td.col-1, td.col-2 {
+    width:50%;
+  }
+}
+.views-field-node-compare-link {
+   display:none;  //do not display for mobile.
+
+  @include breakpoint($tab-portrait) {
+    display: table-cell; //display for tablet and above.
+  }
+}
+
+.l-content .view-professional-designations .view-content {
+  a.compare-toggle {
+    font-weight: normal;
+  }
+}
+
+td.compare-field-label {
+  font-weight:bold;
+}
+
+.node-type-news-release {
+  .l-region--sidebar-first {
+    .block--views, .block--bean {
+
+      display:none;
+
+      @include breakpoint($tab-landscape) {
+        display:block;
+      }
+
+    }
+  }
+}
+.views-field-sm-field-case-id-txt {
+  white-space: nowrap;
+}
+
+.view-aao-solr {
+  table {
+    th.active a {
+      &::after {
+        padding:0;
+        display:none;
+      }
+    }
+  }
+}

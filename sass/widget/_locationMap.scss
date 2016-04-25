@@ -1,0 +1,264 @@
+$closeIcon : url("../images/Close.gif");
+$bubbleImage:  url("../images/Bubble_v4.png");
+$prevOn: url('../images/prev-on.png');
+$prevOff: url('../images/prev-off.png');
+$nextOn: url('../images/next-on.png');
+$nextOff: url('../images/next-off.png');
+
+
+.mapTooltip {
+  position : absolute;
+  border-radius:2px;
+  z-index: 9999;
+  display:none;
+  color:#343434;
+}
+
+.maparea7{
+  text-align: center;
+  margin: 0px auto;
+}
+
+.row-fluid .noMargin{
+  margin: 0px;
+  border-left:0px;
+}
+
+.arrow{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carouselArea{
+  padding: 5px;
+  padding-top: 20px;
+}
+
+.zoomIn, .zoomOut {
+  background-color:#fff6e9;
+  border:2px solid #f99200;
+  color:#cf7900;
+  width:16px;
+  height:16px;
+  line-height: 16px;
+  text-align:center;
+  border-radius:3px;
+  cursor:pointer;
+  position:absolute;
+  font-weight:bold;
+  left : 10px;
+  top : 10px;
+
+  -webkit-user-select: none; // For Webkit
+  -khtml-user-select: none;
+  -moz-user-select: none; // For Mozilla
+  -o-user-select: none;
+  user-select: none; // Default
+}
+
+.zoomOut {
+  top:35px;
+}
+
+circle, text{
+  cursor: pointer;
+}
+
+
+.nav{
+  margin:0;
+}
+
+#dls, #dnr, #sf, #ny, #dc, #stl, #la, #rkw, #br{
+  display:none;
+}
+
+#atl, #bos, #chi, #kan, #jer, #nor, #woo, #phi{
+  display: none;
+}
+
+
+.span3{
+  background: #dceaf4;
+}
+
+.span9{
+  //position:relative;
+}
+
+/*All absolute elements will be relative to this div*/
+#mapApplication{
+      height:427px;
+      min-height:427px;
+
+      .map{
+          //position:relative;
+          top:0;
+          left:0;
+      }
+
+      .address{
+        float:left;
+        font-size:0.875em;
+        width:53%;
+        text-align: left;
+      }
+
+      .mapImage{
+        float:right;
+        height:125px;
+        width:125px;
+        border:1px solid #988a7a;
+        cursor: pointer;
+      }
+
+      ul {
+        width: 1315px;
+        margin-left:0px;
+        padding:0;
+      }
+
+      ul.sidebar li{
+        line-height: 4em;
+      }
+
+      ul li{
+        list-style-type: none;
+        padding: 0;
+        margin: 0 1em;
+
+        &:before{
+          content:"";
+          display:none;
+        }
+      }
+
+  .slideshow {
+        background: $bubbleImage;
+        width: 352px;
+        height: 258px;
+        position:absolute;
+
+        .closeIcon {
+          background: $closeIcon no-repeat 0 0;
+          width: 13px;
+          height: 13px;
+          position: relative;
+          top: 8px;
+          left: 325px;
+          *left: 155px;
+          margin: 2px;
+          cursor: pointer;
+        }
+
+        .slide-wrapper {
+          overflow: hidden;
+          width: 325px;
+          margin: 0 10px 0 15px;
+
+          h4{
+            text-align: center;
+          }
+        }
+
+        .slide {
+          float: left;
+          margin-right: 5px;
+          display: inline;
+
+          .clear{
+            clear:both;
+            height:1px;
+          }
+
+          .article {
+            bottom: 0px;
+            padding: 5px;
+            width: 299px;
+            z-index: 5;
+            text-align: right;
+          }
+
+          a:link{
+            border:none;
+          }
+        }
+
+        .ttFooter{
+          font-size:0.875em;
+        }
+
+  }
+
+  .arrowcontrols{
+          position: relative;
+          top: 14px;
+
+          span {
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            height:20px;
+            position: absolute;
+            top:-10px;
+            width: 20px;
+            background-color: #000;
+            text-decoration: none;
+            text-align: center;
+            line-height: 20px;
+            outline: none;
+          }
+
+          .prev {
+            left: 65px;
+            top: -9px;
+            background:$prevOn;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+          }
+
+          .next {
+            right: 62px;
+            top: -9px;
+            background:$nextOn;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+          }
+  }
+
+    .prev.disabled{
+          cursor: default;
+          background:$prevOff;
+    }
+
+    .next.disabled{
+          cursor: default;
+          background:$nextOff;
+    }
+
+    .pagecount{
+          font-size:0.875em;
+    }
+
+    label{
+          font-size:0.7em;
+          font-weight: bold;
+          text-align: center;
+          cursor: default;
+    }
+}
+
+#fulllist{
+  p{
+    font-size:1em;
+  }
+}
+
+.clearLeft{
+  clear:left;
+}
+

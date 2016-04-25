@@ -1,0 +1,157 @@
+
+/*
+ * Forms
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+%inputfield {
+	//@include boxshadow-input;
+
+	background-color: $white;
+	background-image: none;
+	border: 1px solid;
+	border-color: #848484 #c1c1c1 #e1e1e1;
+	border-radius: 0;
+	color: $input-text;
+	font-family: $serif-stack;
+	font-size: 0.9em;
+	height: 36px;
+	padding: 0.25em 2em 0 0.5em;
+	//text-transform:uppercase;
+
+	&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+		color: $input-inactive;
+	}
+	@include breakpoint($desk) {
+		font-size: 0.85em;
+	}
+
+}
+
+#confirm-form {
+	color: $accent-gray-dark;
+
+	.form-actions {
+		margin-top: 1em;
+	}
+}
+
+.l-main {
+	input {
+		margin: 2px 0;
+        width: 100%;
+
+		&[type=password], &[type=search], &[type=text], &[type=email] {
+			@extend %inputfield;
+
+
+          @include breakpoint($tab-portrait) {
+            border-radius: 0;
+          }
+          @include breakpoint($tab-landscape) {
+            width: 100%;
+          }
+
+          	&::-ms-clear {
+			  width : 0;
+			  height: 0;
+			  display:none;
+			}
+		}
+
+        &[type=text] {
+            padding: 5px;
+            width: 100%;
+        }
+        &[type="image"] {
+         	width: auto;
+        }
+
+		@include breakpoint($desk) {
+			width: auto;
+		}
+
+		
+	}
+
+	.form-type-select {
+		//@include icon-in-field("\f0d7");
+
+		&:after {
+			color: $accent-gray-dark;
+			top: 0.5em;
+		}
+		
+		& > .bef-select-as-links, & > .form-checkboxes {
+			//@include icon-in-field("");		// Cover down arrow for divs with checkboxes instead of dropdown
+
+			&:after {
+				background-color: $global-blue;
+				height: 1em;
+				right: 0.25em;
+				width: 1em;
+				z-index: 99;
+			}
+		}
+
+		@include breakpoint($desk) {
+			&:after {
+				top: 0.6em;
+			}
+		}
+	}
+
+	/*----- For Select / Dropdowns -----
+	.chosen-container {
+		font-size:  0.8em;		
+	}
+	*/
+	select,
+	.chosen-single {
+		@extend %inputfield;
+        font-size:1em;
+		padding-top: 0.4em;		
+
+		div {
+			b {		// dropdown arrow
+				background-position: 0px 7px;
+				background-size: 80px 40px !important;
+			}
+		}
+	}
+	.chosen-drop {		// Options
+		font-family: sans-serif;
+		font-size: 0.85em;
+	}
+	.chosen-container-active.chosen-with-drop {
+		div {
+			b {
+                background-position: -28px 7px;
+
+                @include breakpoint($no-queries){
+                  background-position: -18px 7px;
+                }
+
+                @include breakpoint($desk){
+                  background-position: -28px 7px;
+                }
+			}
+		}
+	}
+
+	textarea {
+		@extend %inputfield;
+		height: auto;
+	}
+
+	.hasPlaceholder {
+  		color: #999;
+  	}
+
+	.chosen-container-active.chosen-with-drop .chosen-single{
+		background-image:none;
+	}
+
+}
+

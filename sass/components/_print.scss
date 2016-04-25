@@ -1,0 +1,122 @@
+@media print {
+  body {
+    overflow: visible !important;
+  }
+  h1.core-title {
+    margin-left:0;
+    padding-left:0;
+    font-size:1.3em;
+  }
+  .l-header {
+    .inner-header {
+      background-color:transparent;
+    }
+    .logo-tablet {
+      display:block;
+    }
+    .logo-main{
+      display:none;
+    }
+    .logo-mobile{
+      display:none;
+    }
+  }
+  .gbl-logo.main-nav-mobile {
+    margin:0;
+  }
+  .navbar-offcanvas{
+    position:relative;
+  }
+  .l-content {
+    padding: 0px 0px 1em 0px;
+    border:none;
+    float:none;
+    overflow: visible !important;
+
+    article {
+      .field--name-body {
+        padding:0;
+        overflow:visible;
+      }
+    }
+  }
+
+  .has-sidebar-third {
+    .l-content {
+      border-right:none;
+    }
+  }
+  .l-region--utility-footer {
+    .block-utility-footer {
+      margin: 0;
+      border-top: 1px solid #9c9c9c;
+      line-height: 1.2;
+      text-align: left;
+      display: block;
+      .block-utility-footer-links {
+        li:first-child {
+          margin-left: 0px;
+          a {
+            padding-left: 0px;
+          }
+        }
+        li {
+          font-size: .75em;
+        }
+      }
+      .block-utility-footer-tagline {
+        display: inline-block;
+        text-align: left;
+        font-size: 0.5em;
+      }
+      .block-utility-footer-copy {
+        display: inline-block;
+      }
+    }
+  }
+  iframe,
+  .l-region--sidebar-first,
+  .l-region--sidebar-third,
+  .l-sidebar-third,
+  .top-navigation,
+  .l-navigation,
+  .main-menu-navigation,
+  .l-footer,
+  .navbar-toggle,
+  .breadcrumb,
+  .tabs,
+  .workbench-info-block,
+  .block--menu-block,
+  .sb-search-input,
+  #block-book-navigation,
+  .block-utility-footer-social{
+    display:none !important;
+  }
+  .sb-icon-search {
+    &:before {
+      display:none;
+    }
+  }
+
+  %headercell {
+    background-color: #ffffff;
+    border-bottom: 3px solid #666666;
+    color: #000;
+    font-weight: bold;
+  }
+.front {
+  .hero-top {
+    display:none;
+  }
+}
+
+  .pane-bean-home-industry-professionals,
+  .pane-bean-for-investors-homepage {
+    display:block;
+    float:none;
+
+    .field--name-field-link-list-summary-image {
+      display:none;
+    }
+  }
+}

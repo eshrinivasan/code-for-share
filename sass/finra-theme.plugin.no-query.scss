@@ -1,0 +1,29 @@
+/**
+  Output has Media queries but no .lt-ie9 and .no-mq fallbacks
+  https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks
+**/
+
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;
+
+
+$lt-ie9 : '.no-mq';
+
+@import "finra-theme.plugin";
+
+
+
+.no-mq.fixed .finra_normalize_prefix .navbar-offcanvas .main_menu_outer_ul li span a{	
+	top:45%;
+	top:25px\0/IE8+9; /* IE8+9  */
+} 
+
+.fixed .navbar-offcanvas .main_menu_outer_ul li .main_menu_inner_ul li a{font-size:0.813em;}
+
+.no-mq.fluid .finra_normalize_prefix .navbar-offcanvas .main_menu_outer_ul li span a{top:50%} 
+.no-mq.fluid .l-region.l-region--footer-second{max-width:300px;} 
+.no-mq.fluid .finra_normalize_prefix .l-footer .mega-footer .block-mega-footer-investors{margin-left:300px;padding-left:10px; max-width:280px} 
+.no-mq.fluid .finra_normalize_prefix .l-footer .mega-footer .mega-footer-section-right{max-width:300px; margin-left:500px}
+.no-mq.fluid .finra_normalize_prefix .l-footer .mega-footer .mega-footer-buttons{max-width:400px;float:right; margin-right: 0px;} 
+.no-mq .finra_normalize_prefix .iwantto {margin-left: 58%; } 
+.no-mq.fluid .finra_normalize_prefix .footer-container, .no-mq.fluid .finra_normalize_prefix .header-wrap{min-width:1000px} 

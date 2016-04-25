@@ -1,0 +1,144 @@
+/*
+ * Alert on Investor, Industry Landing pages
+ * --------------------------------------------------
+ * Mobile first
+ */
+.active .l-region.l-region--header-top{
+    width:100%;
+    float:left;
+    margin-right: -100%;
+    margin-left:75%;
+    @include breakpoint($tab-portrait) {
+      margin-left: 50%;
+    }
+}
+
+.l-region-pagealert{
+  background: $preferences-gray;
+  font-size:em(16);
+  display:none;
+
+  .l-messaging{
+    padding:1.071em;
+    border:1px solid transparent;
+  }
+
+  .alert{
+    padding: em(5) em(15) 0;
+    
+    .fa{
+      color:$main-nav-blue;
+    }
+
+    .title{
+      font-family:$sans-serif-stack-75;
+      font-size:1em;
+    }
+    .cookiegroup{
+      display:block;
+      @include sizeDesktop(){
+        display:inline;
+        font-size:1em;
+      }
+    }
+  }
+
+  .close{
+    float:right;
+    font-weight:bold;
+    font-size:1.2em;
+    line-height:1;
+    cursor:pointer;
+    color: #00467e;
+  }
+
+  form{
+    font-family:$sans-serif-stack;
+  }
+
+  .radio-inline{
+    vertical-align:middle;
+    display:inline-block;
+
+    input{
+      margin-top:0.071em;
+      line-height:normal;
+    }
+  }
+
+  @include sizeDesktop(){
+    //display:block;
+  }
+
+  @include font-reset(0.813em, 1em);
+}
+#pagesetter{
+  .selectlanding{
+    display:none;
+    margin-left: 20px;
+    color: #fb483d;
+    font-weight: bold;
+    @include sizeDesktop(){
+      margin-left:0px;
+    }
+  }
+
+  input[type="radio"]{
+    display:none;
+    & + label{
+    background: #FFF;
+    -webkit-appearance: none;
+    display: inline;
+    padding: 1px .6em;
+    border-radius:100%;
+    position: relative;
+    margin-top: 1px;
+    margin-right: 5px;
+    margin-left: 0;
+  
+    }
+
+  }
+  input[type="radio"]:checked{
+
+    & + label::before{
+      content: "\f111";
+      font-family: FontAwesome;
+      color: #006cae;
+      position: absolute;
+      top: .4em;
+        left: .5em;
+      font-size: 10px;
+      opacity: .6;
+      line-height: 12px;
+      
+    }
+  }
+  .info{margin: 0px 15px 0px 5px;}
+  .setpage{
+      width:100%;
+      margin-left:0;
+      margin-top:0.5em;
+      font-size:1em;
+
+      @include breakpoint($tab-portrait ) {
+        margin-left:1.429em;
+        width:6.8125em; 
+        float:right;
+        margin-top: -37px;
+      }
+
+      @include breakpoint($no-queries){
+        font-size:1em;
+        width:6.8125em;
+      }
+
+
+      @include breakpoint($desk) {
+        float:none;
+        margin-top:0;
+        width:6.8125em;
+      }
+
+  }
+}

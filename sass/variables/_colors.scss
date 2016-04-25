@@ -1,0 +1,86 @@
+$icon-gray                	:   #73787d;
+
+$headings-color			  	:	#0e0e0e;
+$off-canvas-main          	:   #494949;
+$article-text             	:   #1c1c1c;
+$lead-text                	:   #0e0e0e;
+$caption-text             	:   #6d7072;
+$standard-text            	:   #292929;
+$standard-text-hover      	:   lighten($standard-text, 45%);
+$standard-link            	:   #025191;
+$standard-link-hover      	:   #0070ca;		// lighten($standard-link, 25%);
+$heading-link             	:   $standard-link;
+$heading-link-hover       	:   lighten($heading-link, 25%);
+$input-text				  	:	#434343;
+$input-inactive			  	:	#8c8e90;
+
+$global-blue              	:   #d8e1e8;
+$main-nav-blue          	:   #00467e;
+$main-nav-hover          	:   #006cae;
+$main-nav-border          	:   #00345e;
+$main-nav-ghost           	:   #dae2e9;
+$bc-widget-blue             :   #51A2DA;
+
+$slide-hover              	:   #00233f;
+$carousel-indicator-hover 	:   #003056;
+
+$accent-red              	:   #fb483d;
+$accent-red-gradient      	:   #f2372c;
+$accent-red-hover         	:   #ff5e54;		// lighten($accent-red, 10%)
+$accent-red-gradient-hover	:	#fa493e;
+$accent-darkred-hover     	:   darken($accent-red, 10%);
+$accent-light-red         	:   #fc7f78;
+
+$accent-green				:   #008000;
+
+$input-gray             	:   #363636;
+$accent-gray    	        :   #c7cfd3;
+$accent-gray-dark			:   #808587;
+$accent-gray-light			:   #eee;
+$breadcrumb-gray          	:   #6b7072;
+$preferences-gray         	:   #c9d0d6;
+$icon-gray         	        :   #868b90;
+$search-text             	:   #555555;
+
+$footer-title         	    :   #012644;
+$footer-title-hover   	    :   #001627;
+
+$footer-button          	:   #015da6;
+$footer-button-hover    	:   lighten($footer-button, 15%);
+$footer-border-gray    	 	:   #b5bec4;
+$off-canvas-main            :   #494949;
+$lead-text                  :   #0e0e0e;
+
+$nav-border-gray          	:   #bcbcbc;
+$off-canvas-main        	:   #494949;
+$devil						:	#666;
+
+$statistics-numeric-color  	:   #026cc1;
+$typeahead-hover          	:   $bc-widget-blue;
+$pale-blue             	   	:   #e0e8ed;
+$white                    	:   #fff;
+$black                    	:   #000;
+
+$tabbed-active            	:   #dae3ea;
+$tabbed-p                 	:   #929799;
+$tabbed-li-border         	:   #d1d8db;
+
+$left-nav-header          	:   #c4ced6;
+$left-nav-body            	:   $global-blue;
+
+$device-nav               	:   #2f2f2f;
+$device-nav-border        	:   #252525;
+$device-nav-hover         	:   $footer-button;
+$device-nav-second        	:   $main-nav-blue;
+$device-nav-second-border 	:   #003560;
+
+$off-canvas-main          	:   #494949;
+$off-canvas-main-border   	:   $input-gray;
+
+$mild-gray					:	#c1c1c1;
+$news-release-header        :   #4d4d4d;
+
+$pop-up-background          :   #dce1e6;
+
+$webform-background         :   $global-blue;
+

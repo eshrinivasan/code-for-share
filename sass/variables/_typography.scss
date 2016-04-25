@@ -1,0 +1,70 @@
+/*
+ * Typography
+ * --------------------------------------------------
+ * Font, line-height, and color for body text, headings, and more.
+ * Mobile first
+ */
+
+
+$em-base: 16; // Default
+
+$icon-font-path						:	'../fonts/';
+$icon-font-name						:	'glyphicons-halflings-regular';
+
+$sans-serif-stack					:   Arial, sans-serif;
+$sans-serif-stack-thin		        :   Arial, sans-serif;
+$sans-serif-stack-45			    :   Arial, sans-serif;
+$sans-serif-stack-55			    :   Arial, sans-serif;
+$sans-serif-stack-75			    :   Arial, sans-serif;
+
+$serif-stack						:   Georgia, "Times New Roman", Times, serif;
+$serif-stack-thin                   :   "Times New Roman", Times, serif;
+
+$font-base							:   $sans-serif-stack;
+
+$headings-font-family			    :	$serif-stack;
+$headings-font-weight			    :	600;
+$headings-font-weight-normal		: 	400;
+$headings-line-height			    :	1.1;
+
+$footer-icon-helpline               : url("../images/footer-sprite-icons.png")  8px 6px no-repeat;
+$footer-icon-comment                : url("../images/footer-sprite-icons.png")  10px -48px no-repeat;
+$footer-icon-whistle                : url("../images/footer-sprite-icons.png")  8px -104px no-repeat;
+$footer-icon-flag                   : url("../images/footer-sprite-icons.png")  10px -157px no-repeat;
+$footer-icon-file-tip               : url("../images/footer-sprite-icons.png")  9px -210px no-repeat;
+$footer-icon-phone                  : url("../images/footer-sprite-icons.png") 11px -264px no-repeat;
+
+$footer-icon-helpline-hover               : url("../images/footer-sprite-icons.png")  8px -20px no-repeat;
+$footer-icon-comment-hover                : url("../images/footer-sprite-icons.png")  10px -74px no-repeat;
+$footer-icon-whistle-hover                : url("../images/footer-sprite-icons.png")  8px -130px no-repeat;
+$footer-icon-flag-hover                   : url("../images/footer-sprite-icons.png")  10px -183px no-repeat;
+$footer-icon-file-tip-hover               : url("../images/footer-sprite-icons.png")  9px -240px no-repeat;
+$footer-icon-phone-hover                  : url("../images/footer-sprite-icons.png") 11px -290px no-repeat;
+
+$footer-icon-helpline-mobile        : url("../images/footer-sprite-icons.png") 7px -318px no-repeat;
+$footer-icon-comment-mobile         : url("../images/footer-sprite-icons.png") 7px -341px no-repeat;
+$footer-icon-whistle-mobile         : url("../images/footer-sprite-icons.png") 7px -365px no-repeat;
+$footer-icon-flag-mobile            : url("../images/footer-sprite-icons.png") 7px -389px no-repeat;
+$footer-icon-file-tip-mobile        : url("../images/footer-sprite-icons.png") 7px -413px no-repeat;
+$footer-icon-phone-mobile           : url("../images/footer-sprite-icons.png") 7px -438px no-repeat;
+
+$upgrade-background						: #fdd900 url("../images/upgrade/yellowbar.png") no-repeat;
+$upgrade-icon-alert						: url("../images/upgrade/alert_36x36.png") no-repeat;
+$upgrade-icon-close						: url("../images/upgrade/close_36x36.png") no-repeat;
+
+$upgrade-icon-safari					: url("../images/upgrade/safari.png") no-repeat;
+$upgrade-icon-firefox					: url("../images/upgrade/firefox.png") no-repeat;
+$upgrade-icon-chrome					: url("../images/upgrade/chrome.png") no-repeat;
+$upgrade-icon-ie 	   					: url("../images/upgrade/ie.png") no-repeat;
+
+$statistics-icon-brokers                : url("../images/broker.png") no-repeat;
+$statistics-icon-firms                  : url("../images/firm.png") no-repeat;
+$statistics-icon-disciplinary-actions   : url("../images/disciplinary_actions.png") no-repeat;
+
+$brokercheck_sprite_image               : url("../images/brokercheck_badge_sprites.png") no-repeat;
+$badge_sprite_svg                       : url("../images/brokercheck_badge_sprites.svg") no-repeat;
+$bc-widget-thumbnail                    : url("../images/brokercheckwidget-snapshot.png") no-repeat;
+
+@function em($pixels, $context: $em-base ) {
+  @return $pixels/$context * 1em;
+}

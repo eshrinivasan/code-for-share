@@ -1,0 +1,441 @@
+
+.finra-widget {
+    border-radius: none;
+    padding: 0px;
+    padding-bottom: 0px;
+    background: none;
+    border:none;
+    margin-top:1em;
+    background-color: #51A2DA;
+    border:solid 1px #51A2DA;
+    color:#ffffff;
+    font-weight: normal;
+    min-width: 250px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &::before,
+    &::after{box-sizing: border-box;}
+    @include breakpoint($tab-portrait $desk){
+        height:150px;
+        margin-top:0px;
+    }
+
+    .finra-widget-common{ 
+        padding-bottom: 15px;
+
+        &.rulessearch{
+            padding-bottom:0px;
+            .widget_header {
+                @include breakpoint($tab-portrait $desk) {
+                    height:171px;
+                }
+            }
+        }
+        
+        .widget_header {
+            float: none;
+            height: auto;
+            padding: 0;            
+            width: 100%;
+            background-color:#fff;
+            
+            @include breakpoint($tab-portrait $desk) {
+            
+                float:left;
+                height: 148px;
+                padding: 0;
+                width: 30%;
+                min-width: 0px;
+                background-image:none;
+              //  background-color:#00467e;
+                background-color:#fff;
+                
+
+                h3 {
+                    vertical-align: middle;
+                    min-height: 100%;
+                    padding: 45px 0px;
+                    text-align: center;
+                }
+            }
+            @include breakpoint($desk){
+                background:#fff;
+             //   background: #00467e;
+             //   background-image:
+             //   -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00467e), color-stop(100%, #002e53));
+             //   background-image: -webkit-linear-gradient(#00467e, #002e53);
+             //   background-image: -moz-linear-gradient(#00467e, #002e53);
+             //   background-image: -o-linear-gradient(#00467e, #002e53);
+             //   background-image: -ms-linear-gradient(#00467e, #002e53);
+             //   background-image: linear-gradient(#00467e,#002e53);
+
+                h3{
+                    min-height:60px;
+                }
+            }
+            
+        }
+        @include breakpoint($tab-portrait $desk) {
+            .widget_body {
+                float:left;
+                width:70%;
+                padding-top:20px;
+            }
+        }
+
+        h3 {
+            font-family: $serif-stack;
+            font-size: 26px;
+            font-weight: normal;
+            background-image:none;
+            background-repeat: no-repeat;
+            margin: 0;
+            text-indent: 0px;
+            position: static;
+            top:0px;
+            width: auto;
+            min-height: 42px;
+            color:#fff;
+            text-decoration: none;
+            text-align:left;
+            line-height:14px;
+            padding: 7px 25px 7px;
+            box-sizing:border-box;
+            @include breakpoint($tab-portrait $desk) {
+                padding: 20px 25px;
+            }
+            &.rulessearch{
+                font-size:17px;
+                padding: 15px 25px;
+                @include breakpoint($tab-portrait $desk) {
+                    font-size:22px;
+                    padding: 60px 25px;
+                    line-height: 1.2em
+                }
+                @include breakpoint($phone $tab-portrait) {
+                    font-size:18px;
+                    padding: 15px 25px;
+                }
+                sup{
+                    font-size: 8px;
+                }
+            }
+            sup{
+                font-size: 10px;
+            }
+
+        }
+        h4 {  
+
+            padding: 15px 25px 15px;
+            border-bottom: none;
+            margin: 0px;
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 17px;
+            color: #fff;
+            width: auto;
+            @include breakpoint($tab-portrait $desk) {
+                 padding: 7px 25px 17px;
+                 &.rulessearch{
+                    font-size: 20px;
+                    line-height: 24px;
+                    padding-bottom:0px;
+                 }
+            }
+            @include breakpoint($desk) {padding: 15px 25px 15px;}
+
+        } 
+        a.showHand{
+            cursor: pointer;
+            cursor: hand;
+            width: 169px;
+            color:#fff;
+            text-decoration:none;
+        }
+        
+        .searchfor_checks {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                padding: 0px 25px;
+                background-color:#015da6;
+                
+                .checks{
+                    overflow: hidden;
+                    padding-bottom: 25px;
+                    border-top: 1px dotted #003158;
+                    &.rulessearch{
+                        p{margin-bottom:0px; font-weight:bold}
+                        @include breakpoint($tab-portrait $desk) {
+                            border:none;
+                            p{display:none;}
+                        }
+                    }
+                    .checkbox_rf{
+                        float:left; 
+                        width: 50%;
+                        margin-top: 20px;
+                        @include breakpoint($tab-portrait $desk) {
+                            width: 25%;
+                            margin-top: 10px; 
+                        }
+                            input[type="checkbox"] {
+                                display:none;
+                                & + label{
+                                background: #FFF;
+                                -webkit-appearance: none;
+                                appearance:none;
+                                -moz-appearance:none; /* Firefox */
+                                display: inline;
+                                padding: 2px 11px;
+                                position:relative;
+                                margin-top: 1px;
+                                margin-right: 5px;
+                                margin-left: 0;
+                                -webkit-box-shadow: inset 0 1px 2px 1px #cccccc;
+                                -moz-box-shadow: inset 0 1px 2px 1px #cccccc;
+                                box-shadow: inset 0 1px 2px 1px #cccccc;
+                                }
+                               
+
+                               
+                                
+                            }
+                            input[type="checkbox"]:checked {
+                                & + label::before {
+                                    position:absolute;
+                                    left:1px;
+                                    content: "";
+                                    display: inline-block;
+                                    width: 18px;
+                                    height:18px;
+                                    background: url('../images/checkbox.png') no-repeat 2px 4px;
+                                }
+                            }
+                            p{
+                                    font-weight: bold;
+                            }
+                                    
+                    }
+                }
+        }
+        
+
+        .autocomplete-container {
+            position: relative;
+            top: 0;
+            margin-top: 0px;
+            background:none;
+            padding: 0px 25px;
+            .bcCallToAction{
+                border: none;
+                background: #fb483d;
+                font-size: 20px;
+                margin: 0px;
+                padding: 4px 0;
+                width: 100%;
+                border-radius: 3px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                letter-spacing: .05em;
+                font-family: "HelveticaNeueW01-Thin",Helvetica,Arial,sans-serif;
+                text-align: center;
+                a{color:white}
+            }
+  
+            &.rulessearch{
+                background-color: #026cc1;
+                padding: 25px;
+                @include breakpoint($tab-portrait $desk) {
+                    padding: 0px 25px 25px;
+                    background-color:#015da6;
+                    margin-top: -1px;
+                }
+                input[type="text"] {
+                    @include breakpoint($tab-portrait $desk) {
+                        width: 64%;
+                    }
+                }
+
+            }
+
+            input[type="text"] {
+                border-radius:0px;
+                width:100%;
+                height:30px;
+                color: #434343;
+                border: none;
+                // border-radius: 3px;
+                font-family:$serif-stack;
+                -webkit-box-shadow: 3px 4px 5px -4px rgba(0,0,0,0.2),inset 0px 5px 5px -3px rgba(0,0,0,0.2);
+                box-shadow: 3px 4px 5px -4px rgba(0,0,0,0.2),inset 0px 5px 5px -3px rgba(0,0,0,0.2);
+                position: relative;
+                padding:4px 1.5%;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+                @include breakpoint($tab-portrait $desk) {
+                    width:65%;
+                    float:left;
+                    margin-top: 3px;
+                }
+            }
+
+            .red.btn{
+                border:none;
+                background: #fb483d;
+                color: #fff;
+                font-size: 20px;
+                margin: 0px;
+                padding: 4px 0;
+                width: 100%;
+                border-radius: 3px;
+                -moz-border-radius: 3px;
+                -webkit-border-radius: 3px;
+                letter-spacing: .05em;
+                font-family: $serif-stack;
+                @include breakpoint($tab-portrait $desk){
+                    margin-left:5%;
+                    width: 30%;
+                }
+            }
+            
+            
+           .ui-autocomplete-input-clear {
+                top: 13px;
+                right: 30px;
+                position:absolute;
+                background: url('../images/Close.gif') no-repeat;
+                @include breakpoint($tab-portrait $desk){
+                    right: 43%;
+                }
+            } 
+
+
+
+
+        }
+    }
+  
+    
+
+    
+}
+
+
+.ui-autocomplete {
+        padding:0px;
+        border: thin solid rgb(239, 239, 239);
+        //width: 232px !important;
+        & ::first-child{border-top-color: $main-nav-blue ;}
+        @include breakpoint($tab-portrait $desk){
+            top:82px;
+        }
+        .ui-autocomplete-category {
+            border-bottom: $bc-widget-blue   4px solid  ;
+            .s4_category{
+                
+                height:30px;
+            }
+            span{
+                border-radius: 0px;
+                width: 45%;
+                height:30px;
+                background-color: $accent-gray-light;
+                border-top-color: $accent-gray-light;
+
+                &:hover{
+                    background-color:$accent-gray;
+                    border-top-color:$accent-gray;
+                    text-decoration: none;
+                    
+                }
+            }
+        }
+        
+
+        span.s4_category {    
+            background-color: $bc-widget-blue;
+            border-top-color: $bc-widget-blue;
+        }
+        span.s4_category:hover{
+            background-color: #032D4E;
+            border-top-color: #032D4E;
+        }
+        li.ui-menu-item{         
+            border-bottom: 1px dotted #a7aeb4;  
+            cursor:pointer;
+            font-size:0;
+
+            a{              
+                color: rgb(41, 41, 41);
+                background-color: #EBF1F5;
+                padding: 10px 5px;
+            
+                .s4_item-field strong{
+                    background-color:#B9C5CA
+                }
+                div.s4_item-field span,
+                div.s4_item-field div{ 
+                    color: #025191;
+                    font-family: $sans-serif-stack;
+                }
+            }
+            a.ui-state-hover,
+            a:active{
+                background: $bc-widget-blue;
+                color:#fff;
+                border:none !important;
+                padding: 10px 5px;
+                -webkit-user-select: none;
+                -webkit-touch-callout: none;  
+
+
+                div.s4_item-field span,
+                div.s4_item-field div{ 
+                    color:#fff;
+                    font-family: $sans-serif-stack;
+
+                    strong{
+                        background-color: #002F55;
+                        color:#fff;
+                    }
+                }
+            }
+        }
+
+        .noResultsLink{
+            font-size:1em;
+            margin-top:10px;
+            text-align: center;
+
+            a{
+                &:link{
+                COLOR: #0000FF;
+                }
+                &:visited{
+                COLOR: #800080;
+                }
+            }
+            
+        }
+        
+    }
+
+.block--finra-custom-blocks-broker-check-widget-block,
+.finra-widget {
+  margin-top:1em;
+
+  @include breakpoint($tab-portrait){
+    margin-top:0px;
+  }
+}
+.block--finra-custom-blocks-broker-check-widget-block,
+.block--finra-custom-blocks-broker-rulesandguidance-block{
+    margin-bottom:20px;
+
+    h3.widgetHeader {
+        text-align:center;
+    }
+}

@@ -1,0 +1,303 @@
+.leaflet-container{
+  a.leaflet-popup-close-button{
+    color: #0a4a7d;
+    padding: 3px;
+
+    &:hover{
+      color:#0a4a7d;
+    }
+  }
+
+  .leaflet-popup-tip{
+      display:none;
+  }
+
+  .share_url{
+    position: absolute;
+    top: 27px;
+    padding:5px;
+    display:none;
+
+    a{
+      width:100%;
+      height:100%;
+      font-size:10px;
+    }
+  }
+
+  a.leaflet-popup-close-button,
+  .share_url{
+    left: -33px;
+    background-color: $pop-up-background;
+    height: 27px;
+    width: 35px;
+    border-left: 1px solid #0a4a7d;
+    border-bottom: 1px solid #0a4a7d;
+  }
+}
+
+
+
+.view-leaflet-states-statistics{
+    .view-header{
+      font-size:1em;
+      font-family:$serif-stack;
+      margin:1em 0;
+    }
+
+    .leaflet-control-zoom{
+      display:none;
+    }
+
+    .leaflet-label-overlay {
+      line-height:0px;
+      margin-top: 9px;
+      position:absolute;
+    }
+
+    .text-labels {
+      font-size: 2em;
+      font-weight: 700;
+      /* Use color, background, set margins for offset, etc */
+    }
+
+    .selectstate{
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    .leaflet-marker-pane{
+        img{
+          display:none;
+        }
+
+        .statistics-label{
+        }
+    }
+
+    .leaflet-popup-pane{
+      .leaflet-label{
+        display:none;
+      }
+    }
+
+
+    .leaflet-popup-content{
+      .containImgTitle{
+        position: relative;
+        height: 70px;
+        width: 240px;
+
+        .title_bgimage img{
+          width: 86px;
+          height: 84px;
+          display:inline-block;
+        }
+      }
+
+
+      .stateTitle{
+        position: absolute;
+        top: 36%;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+      }
+
+      .statisticsText{
+        padding-left: 36px;
+        padding-top: 6px;
+      }
+
+      .broker.statisticsText{
+        padding-left: 30px;
+      }
+    }
+
+}
+
+.leaflet-popup-content-wrapper{
+  background:$pop-up-background;
+  border-left:1px solid #0a4a7d;
+  border-bottom:1px solid #0a4a7d;
+}
+
+.leaflet-popup-content{
+    margin:5px;
+
+    .row{
+      margin: 1em 0;
+    }
+
+    table{
+      thead{
+        tr{
+          th{
+            background-color:transparent;
+            border:none;
+            color:black;
+          }
+        }
+      }
+
+      tbody{
+        tr{
+          td{
+            border:none;
+          }
+        }
+      }
+    }
+
+    .col-md-6{
+      padding-left:10px;
+      padding-right:10px;
+    }
+
+    .stateTitle{
+      font-size:1.5em;
+    }
+
+    .blue-text{
+      color:$statistics-numeric-color;
+      font-weight:bold;
+      font-size:1.3em;
+      line-height: 1;
+    }
+
+    .brokericon{
+      background:$statistics-icon-brokers;
+      display:inline-block;
+      float:left;
+      width:29px;
+      height:35px;
+    }
+
+    .firmicon{
+      background:$statistics-icon-firms;
+      display:inline-block;
+      float:left;
+      width:29px;
+      height:35px;
+    }
+
+    .disc_action_icon{
+        background:$statistics-icon-disciplinary-actions;
+        display:inline-block;
+        float:left;
+        width:35px;
+        height:25px;
+        margin:0 10px;
+        margin-top:2px;
+    }
+
+    .disc_action_block{
+        display:inline-block;
+        float:left;
+
+      .blue-text{
+        text-align:left;
+      }
+    }
+
+    .disciplinary_actions{
+        background:white;
+        display:inline-block;
+        float:left;
+        width:25px;
+        height:25px;
+    }
+
+    .whitearea{
+        background:$white;
+        margin:0;
+        padding:10px;
+    }
+
+    .styleTitle{
+        margin: 5px;
+        text-align: center;
+        display: block;
+        overflow:hidden;
+
+      .statisticsText{
+        padding-left: 38px;
+        padding-top: 0;
+      }
+    }
+
+    .captionTitle{
+        margin: 10px 5px;
+        text-align: center;
+        display: table;
+    }
+
+
+}
+
+
+.statistics_bottom_content_area{
+    border-top: 4px solid #c8ced3;
+    margin-top:2em;
+
+  .statistics_bottom_content_top{
+    font-size:2em;
+  }
+
+  .coloredText,
+  .coloredNumeric{
+    color: #0d477d;
+  }
+
+  .row{
+    border-top:1px solid #e3e1e3;
+  }
+
+  .spacer{
+    margin:1em 0;
+  }
+
+  .disc_actions{
+    font-size:1.2em;
+  }
+
+  .s-169187_174513_broker,
+  .s-169187_174513_brokerage_firm,
+  .s-169187_174513_disciplinary_actions,
+  .money,
+  .money-save{
+    background: url(../images/sprites.png) no-repeat;
+    display:inline-block;
+  }
+
+  .s-169187_174513_broker{
+    background-position: -15px -7px ;
+    width: 68px;
+    height: 99px;
+  }
+
+  .s-169187_174513_brokerage_firm{
+    background-position: -513px -4px ;
+    width: 83px;
+    height: 99px;
+  }
+
+  .s-169187_174513_disciplinary_actions{
+    background-position: -124px -17px ;
+    width: 95px;
+    height: 68px;
+  }
+
+  .money{
+    background-position: -382px 0;
+    width: 117px;
+    height: 87px;
+  }
+
+  .money-save{
+    background-position: -261px -3px ;
+    width: 116px;
+    height: 103px;
+  }
+}
+

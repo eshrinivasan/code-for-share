@@ -1,0 +1,476 @@
+.l-footer{
+  margin-top:1em;
+
+	.mega-footer{
+    font-size:em(14);
+    position:relative;
+
+     a{
+        text-decoration:none;
+      }
+
+	 .list-unstyled{
+		   list-style-type:none;
+		   padding-left:0;
+           margin:0;
+
+			li{
+            list-style-image:none;
+              @include breakpoint($tab-portrait){
+                  line-height:1.5;
+              }
+
+              @include sizeDesktop(){
+                      margin-top: 1em;
+                  line-height: 1.6;
+              }
+			}
+
+			li:first-child{
+				margin-top:0;
+			}
+			a{
+				font-size:1em;
+				color: $footer-button;
+				font-family:$sans-serif-stack-55;
+
+
+				&:hover{
+					text-decoration:underline;
+				}
+
+              @include sizeDesktop(){
+                  font-size:0.913em;
+              }
+
+              @include breakpoint($lg-desk){
+                  font-size:1em;
+              }
+			}
+		}
+
+		.hidden-xs{
+			display:none;
+			@include breakpoint($tab-portrait){
+				display: block;
+			}
+			@include breakpoint($no-queries){
+				display: block;
+			}
+
+    	}
+
+		.block-mega-footer-button{	
+          	padding: 0.714em;
+          	border-radius: 8px;
+          	display: block;
+
+          	@include sizeDesktop(){
+          		padding: 0.2em;
+          		border-radius:0;
+          	}
+
+          	.media{
+                 display:inline-block;
+    			 margin: 0.214em auto;
+                 padding-left:0.313em;
+
+
+          		@include breakpoint($tab-portrait){
+            	  display:inline-block;
+            	  margin:0;
+                  padding-left:0.313em;
+          		}             
+
+              @include sizeDesktop(){
+                display:inline-block;
+                margin:0;
+                padding:0.357em 0 0.314em 0.313em;
+              }
+
+              @include breakpoint($lg-desk){
+                display:inline-block;
+              }
+          	}
+
+          	.media-body{
+          		vertical-align: middle;
+				display: table-cell;
+          	}
+
+          	.media-sub-heading{
+      				font-family:$sans-serif-stack;
+      				color: $white;
+      				text-align:left;
+
+                      @include sizeDesktop(){
+                        color:$footer-title;
+                      }
+      		}
+
+            .fa{
+              height: 31px;
+              width: 24px;
+              margin-top: 0px;
+              display:inline-block;
+
+              @include breakpoint($tab-portrait){
+                width: 32px;
+                vertical-align:top;
+              }
+              @include breakpoint($no-queries){
+                width: 32px;
+                vertical-align:top;
+              }
+
+              @include sizeDesktop(){
+                  height:30px;
+              }
+
+              .fixed &{                
+                  position: relative;
+                  top: 0;
+              }
+            }
+
+            .fa-helpline-icon{
+              background: $footer-icon-helpline-mobile;
+
+            }
+            .fa-phone-icon{
+              background: $footer-icon-phone-mobile;
+            }
+
+            .fa-comment-icon{
+              background: $footer-icon-comment-mobile;
+            }
+
+            .fa-whistle-icon{
+              background: $footer-icon-whistle-mobile;
+            }
+
+            .fa-flag-icon{
+              background: $footer-icon-flag-mobile;
+            }
+
+            .fa-file-tip-icon{
+              background: $footer-icon-file-tip-mobile;
+            }
+
+            &:hover{
+               background-color:#0188f2;
+                @include sizeDesktop(){
+                  background-color:$white;
+                }
+           }
+
+          /*
+            &:hover{
+                .fa{
+                   .fixed.no-mq &{
+                      background-position: 9px -22px;
+                      height: 26px;
+                  }
+                }
+              }*/
+            
+
+          @include sizeDesktop(){
+              .fa-helpline-icon{
+                background: $footer-icon-helpline;
+              }
+
+              .fa-comment-icon{
+                background: $footer-icon-comment;
+              }
+
+              .fa-whistle-icon{
+                background: $footer-icon-whistle;
+              }
+
+              .fa-flag-icon{
+                background: $footer-icon-flag;
+              }
+
+              .fa-file-tip-icon{
+                background:$footer-icon-file-tip;
+              }
+
+              .fa-phone-icon{
+                background: $footer-icon-phone;
+              }
+
+
+             &:hover{
+               .fa-helpline-icon{
+                   background: $footer-icon-helpline-hover;
+                   margin-top:4px;
+               }
+
+               .fa-comment-icon{
+                   background: $footer-icon-comment-hover;
+               }
+
+               .fa-whistle-icon{
+                   background: $footer-icon-whistle-hover;
+               }
+
+               .fa-flag-icon{
+                   background:$footer-icon-flag-hover;
+               }
+
+               .fa-file-tip-icon{
+                   background:$footer-icon-file-tip-hover;
+                   margin-top: 8px;
+               }
+
+               .fa-phone-icon{
+                   background: $footer-icon-phone-hover;
+               }
+             }
+          }
+	    }
+
+	    .block-mega-footer-button-skin{
+	    	text-decoration: none;
+    		border: none;
+            background-color: $footer-button;
+		  	color: $white;
+            text-align:center;
+
+            @include breakpoint($tab-portrait){
+              text-align:left;
+            }
+
+		  	@include sizeDesktop(){
+  				background-color: $white;	   			
+  				color: $footer-button;
+                text-align:left;
+  			}
+
+			.media-heading{
+                font-family:$serif-stack;
+                font-size:1em;
+
+                @include breakpoint($tab-portrait){
+                  font-family:$serif-stack;
+                  font-size:1em;
+                }
+
+                @include sizeDesktop(){
+                  font-family:$serif-stack;
+                  font-size:1em;
+                }
+			   }
+
+            .media-sub-heading{
+                font-size:1em;
+
+                @include breakpoint($tab-portrait){
+                  font-family:$sans-serif-stack-thin;
+                  font-size:0.7em;
+                }
+                @include sizeDesktop(){
+                  font-family:$sans-serif-stack;
+                  font-size:0.9em;
+                }
+            }
+	    }
+
+	    .block-mega-footer-title{    		    		
+    		    font-weight: normal;
+                font-family:$serif-stack;
+                padding:1em 0 0.714em 0;
+    		    margin-left:2.857em;
+    		    text-align:center;
+                margin: 0.25em 0.25em;
+
+    		@include breakpoint($tab-portrait){
+    			     text-align:left;
+                    font-family: $sans-serif-stack;
+    		}
+
+            @include breakpoint($no-queries){
+                text-align:left;
+            }
+
+            @include breakpoint($desk){
+                text-align:left;
+                font-weight: normal;
+            }
+
+            a{
+              text-transform: capitalize;
+            }
+		}
+
+	    .block-mega-footer-title-skin{ 
+	    	text-decoration: none;
+	    	border-top: 1px solid $white;
+
+            a{
+              color:$standard-link;
+
+              &:hover{
+                color:$standard-link-hover;
+              }
+            }
+            @include breakpoint($tab-portrait){
+	    		border:none;
+                a{
+                  color: $footer-title;
+                }
+	    	}
+	    	@include sizeDesktop(){
+	    		border:none;
+                a{
+                  color: $footer-title;
+                }
+	    	}	     	
+	    }
+
+	    .mega-footer-common{
+            font-size:1em;
+        		@include breakpoint($tab-portrait){
+                  margin: 0;
+                  font-size:1.1em;
+        		}
+
+            @include sizeDesktop(){
+    			 margin:0;
+                 font-size:1em;
+    		    }
+
+            @include breakpoint($lg-desk){
+                font-size:1.2em;
+            }
+      }
+
+	    .mega-footer-buttons{
+	    	margin-top:10px;
+	    	padding:2.143em 1.071em 1.071em 1.071em;
+            margin: 0 0.5em;
+
+	    	@include breakpoint($tab-portrait){
+				 @include grid-span(2.5, 4.5, 6);
+                  padding:1.25em 1.071em 0;
+			 }
+
+	    	@include sizeDesktop(){
+              @include grid-span(4, 9.5, 12, 0);
+                margin-left: 66.833%;
+                padding:1.143em 0;
+			   }
+            p{
+              display:none;
+            }
+	    }
+
+	    .block-mega-footer-industry{
+	    	.block-mega-footer-title{
+                border-top:none;
+				@include sizeDesktop(){
+	    			word-wrap:normal;
+	    		}	    		
+	    	}
+	    }
+
+	    .block-mega-footer-investors{
+            position: relative;
+
+            @include breakpoint($no-queries){
+              @include grid-span(3, 4, 12);
+              margin-left: 25.352%;
+            }
+
+            @include breakpoint($desk){
+              @include grid-span(2.5, 4, 12);
+              margin-left: 24.352%;
+            }
+
+            &:after {
+              content: "";
+              display: none;
+              border: 1px dotted #b5bec4;
+              position: absolute;
+              border-width: 0 1px;
+              left: 17em;
+              top: 5%;
+              @include footer-border;
+
+                @include breakpoint($no-queries){
+                  left:15em;
+                }
+
+                @include breakpoint($desk){
+                   left: 17em;
+                }
+
+                @include breakpoint($lg-desk){
+                   left: 17em;
+                }
+            }
+
+            &:before {
+              content: "";
+              display: none;
+              border: 1px dotted #b5bec4;
+              border-width: 0 1px;
+              position: absolute;
+              left: -2em;
+              top: 6%;
+              @include footer-border;
+            }
+
+            .fixed &{
+               &:before{
+                left: -0.5em;
+              }
+
+              &:after {
+                left: 15em;
+              }
+            }
+	    }
+
+	    .mega-footer-section-left{	    	
+	    	@include sizeDesktop(){   		
+	    		@include grid-span(3, 1, 12, 0);
+                width:23%;
+	    	}
+	    }
+
+	    .mega-footer-section-left-tablet{
+	   		 padding:0;
+             @include breakpoint($tab-portrait){
+                  float:left;
+                  padding:0 1.071em 1em;
+             }
+             @include sizeDesktop(){
+                  float:none;
+                  padding:0;
+              }
+	    }
+
+	    .mega-footer-section-right{
+	    	@include breakpoint($tab-portrait){
+	    		@include grid-span(2, 1, 6, 0);
+	    		margin-left:7%;
+	    	}
+	    	@include sizeDesktop(){
+	    		@include grid-span(2, 6.5, 12);
+                padding-left:2.429em;
+	      	}
+            @include breakpoint($lg-desk){
+                @include grid-span(2, 6.5, 12);
+                margin-left:43.47887%;
+            }
+        }
+
+      @include sizeDesktop(){
+        padding-bottom:1em;
+      }
+
+      @include font-reset(0.875em, 0.875em);
+	}
+}

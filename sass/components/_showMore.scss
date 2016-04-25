@@ -1,0 +1,33 @@
+.hideContent {
+  overflow: hidden;
+  height: 0px;
+}
+
+.showContent {
+  overflow: hidden;
+  height: auto;
+}
+
+.show-more {
+  margin:1.25em 0;
+  text-align:right;
+  border-top:1px solid #ddd;
+
+  a{
+    text-decoration:none;
+    font-size:.8em;
+    padding: 0.313em;
+    text-align: right;
+    font-weight:bold;
+    color:$accent-red;
+    outline: none;
+  }
+}
+
+.view-header{
+  .content{
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+}

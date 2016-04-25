@@ -1,0 +1,10 @@
+// This is the same as the normalize.scss but it is wrapped in the prefix so as not to change anything on the client's page.
+.finra_normalize_prefix{
+	@import "variables/**/*";
+
+	// Generate normalize.css.
+	@import "normalize";
+
+	// Use 'border-box' for the box model.
+	@import "toolkit/border-box";
+}

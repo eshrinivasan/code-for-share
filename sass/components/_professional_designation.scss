@@ -1,0 +1,208 @@
+.view-professional-designations {
+        .view-content{
+            span.views-summary{
+                padding: 0px 3px;
+                font-size: .75em;
+                color: #999;
+                line-height: 2em;
+                a{
+                     white-space: nowrap;
+                }
+            }
+
+            span.views-summary:before{
+                    content: "\2022";
+                    padding-right: 6px;
+            }
+
+            span.views-summary:first-child:before{
+                    display:none
+            }
+
+            a{
+                font-weight: bold;
+            }
+
+            table{
+                width: 100%;
+            }
+        }
+    }
+
+.view-market-maker-firms {
+  .view-content{
+    span.views-summary{
+      padding: 0px 2px;
+      font-size: .75em;
+      color: #999;
+      line-height: 2em;
+      a{
+        white-space: nowrap;
+      }
+    }
+
+    a{
+      font-weight: bold;
+    }
+
+    table{
+      width: 100%;
+    }
+  }
+
+  .view-footer {
+    a{
+      display:block;
+      text-align:right;
+    }
+
+    p {
+      margin: 0 0 -15px 0;
+    }
+  }
+}
+
+
+#block-finra-pd-professional-designations-block, #block-finra-mm-market-centers-block {
+    border-radius: none;
+    padding: 0px;
+    padding-bottom: 0px;
+    background: none;
+    border:none;
+    margin-top:0px;
+    background-color: #015da6;
+    color:#ffffff;
+    font-weight: normal;
+    min-width: 250px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &::before,
+    &::after{box-sizing: border-box;}
+    @include breakpoint($tab-portrait $desk){
+        height:130px;
+    }
+
+    p.pd_disclaimer{
+        padding: 15px 25px 14px;
+        border-bottom: none;
+        margin: 0px;
+        font-weight: normal;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: .9em;
+        line-height: 17px;
+        color: #ffffff;
+        width: auto;
+    }
+    #edit-description{
+        float: none;
+        height: auto;
+        padding: 0;
+        margin-bottom: 0px;
+        width: 100%;
+
+        @include breakpoint($tab-portrait $desk) {
+            float:left;
+            height: 130px;
+            padding: 0;
+            width: 30%;
+            min-width: 0px;
+            background-image:none;
+            background-color:#00467e;
+
+            h3 {
+                vertical-align: middle;
+                min-height: 100%;
+                padding: 60px 0px;
+                text-align: center;
+            }
+        }
+
+        @include breakpoint($desk){
+            background: #00467e;
+            background-image:
+            -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00467e), color-stop(100%, #002e53));
+            background-image: -webkit-linear-gradient(#00467e, #002e53);
+            background-image: -moz-linear-gradient(#00467e, #002e53);
+            background-image: -o-linear-gradient(#00467e, #002e53);
+            background-image: -ms-linear-gradient(#00467e, #002e53);
+            background-image: linear-gradient(#00467e,#002e53);
+        }
+
+        label   {
+            font-family: $sans-serif-stack;
+            font-size: 1.2em;
+            font-weight: normal;
+            background-image:none;
+            background-repeat: no-repeat;
+            margin: 0;
+            text-indent: 0px;
+            position: static;
+            top:0px;
+            width: auto;
+            min-height: 42px;
+            color:#fff;
+            text-decoration: none;
+            text-align:left;
+            line-height: 1.2em;
+            padding: 12px 20px;
+            box-sizing:border-box;
+            text-transform: capitalize;
+            @include breakpoint($phone $desk) {
+                font-size: 1.5em;
+                padding-top: 20px;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
+                cursor: pointer;
+                font-size: .95em;
+            }
+        }
+    }
+    .form-item-designation-list label, .form-item-mm-firms-list label{
+        padding: 0px 25px;
+        font-weight: normal;
+        line-height: 1.2em;
+        @include breakpoint($tab-portrait $desk){
+            margin-left: 29.555%;
+            padding-top: 20px;
+        }
+    }
+    #edit_designation_list_chosen, #edit_mm_firms_list_chosen{
+        padding: 20px;
+        width: 100% !important;
+        @include breakpoint($tab-portrait){
+            width: 70% !important;
+        }
+
+        @include breakpoint($no-queries){
+            width: 100% !important;
+        }
+
+        @include breakpoint($desk){
+            width: 100% !important;
+        }
+    }
+    .chosen-container .chosen-results li{
+        color:#292929;
+        &.highlighted{
+            background-image:none;
+            color:white;
+            background-color: #015da6;
+        }
+    }
+ }
+
+.node-compare-block-content {
+  .pd-compare-limit {
+    margin-top: -1.2em;
+    font-size: .9em;
+    padding-left: 10px;
+  }
+}
+
+.prev-designations {
+  color: $accent-gray-dark;
+  font-size:.9em;
+}

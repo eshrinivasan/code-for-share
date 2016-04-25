@@ -1,0 +1,372 @@
+
+//Usage:
+//@include rem('font-size', $baseFontSize);
+//@include rem('margin-bottom', $baseMarginSize);
+
+@mixin rem($property, $values)
+{
+  // Placeholder variables
+  $shorthand_px:  "";
+  $shorthand_rem: "";
+
+  // Parameter $values might be a list of elements
+  @each $value in $values
+  {
+    // Current value is a valid number and greater than 0
+    @if $value != auto and $value != 0
+    {
+      $value: $value / ($value * 0 + 1);
+      $baseLine: $baseLine / ($baseLine * 0 + 1);
+      // Add 'px' and 'rm' to the current value and store in
+      // placeholder variables
+      $shorthand_px: #{ $shorthand_px + " " + $value + px};
+      $shorthand_rem: #{ $shorthand_rem + " " + ($value / $baseLine) + rem};
+    }
+      // Current value is 'auto' or 0
+    @else
+    {
+      // Add only 'auto' or 0 to the placeholder variables
+      $shorthand_px: #{ $shorthand_px + " " + $value};
+      $shorthand_rem: #{ $shorthand_rem + " " + $value};
+    }
+  }
+
+  // Output the CSS property in pixels and rems
+  #{$property}:$shorthand_px;
+  #{$property}:$shorthand_rem;
+}
+
+@mixin arrow-style {
+  position: relative;
+  
+  &:before {
+    @include fontAwesome("\f105");
+
+    color: $accent-red;
+    font-style: normal;
+    font-size: em(16);
+    font-weight: normal;
+    line-height: 1;
+    padding-right: 0.9em;
+    position: absolute;
+    margin-left: -1.5em;
+    margin-right: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @include breakpoint ($desk) {
+    &:before {
+      content: "\f101";
+    }
+  }
+}
+
+@mixin fontAwesome($content:"\f077", $color:$standard-link) {
+  color: $color;
+  content: $content;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin-right: 0.5em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin footer-border() {
+  @include breakpoint($no-queries) {
+    height:350px;
+    display:block;
+  }
+
+  @include breakpoint($desk) {
+    display:block;
+    height:379px;
+  }
+  @include breakpoint($lg-desk) {
+    display:block;
+    height:379px;
+  }
+}
+
+//IE8 seems to not follow the font-size of the body or parent
+@mixin font-reset($size-no-queries, $size-desk) {
+  @include breakpoint($no-queries) {
+    font-size:$size-no-queries;
+  }
+
+  @include breakpoint($desk) {
+    font-size: $size-desk;
+  }
+}
+
+@mixin switch-to-mobile() {
+  @include breakpoint($tab-portrait) {
+    background: none repeat scroll 0 0 $main-nav-blue;
+    color: $white;
+
+    &:hover {
+      background: none repeat scroll 0 0 $main-nav-blue;
+      color: $white;
+    }
+  }
+
+  @include breakpoint($tab-landscape) {
+    &:hover {
+      background: none repeat scroll 0 0 $main-nav-blue;
+      color: $white;
+    }
+  }
+}
+
+@mixin add-box-shadow {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.176);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    border-top:none;
+    float:left;
+}
+
+@mixin boxshadow-input {
+    box-shadow: 3px 4px 5px -4px rgba(0,0,0,0.2), inset 0px 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+@mixin redlink {
+  color: $accent-red;
+  text-align: left;
+  text-transform: uppercase;
+
+  &:after {
+    @include fontAwesome("\f101");
+
+    font-size: 1.4em;
+    line-height: 0;
+    padding-left: 0.4em;
+  }
+  &:hover {
+    color: $accent-red;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=opacity);
+}
+
+@mixin colorgradient($t:$accent-red, $b:$accent-red-gradient) {
+  background: $t;
+  background: -webkit-linear-gradient($t, $b);	/* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($t, $b);			  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($t, $b);     /* For Firefox 3.6 to 15 */
+  background: linear-gradient($t, $b);          /* Standard syntax */
+}
+
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%clearfix {
+  &:after {
+
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin form-elements {
+    border: medium none;
+    border-radius: 0 0 0 0;
+    height: 36px;
+    color: #999;
+}
+
+@mixin abs-pos($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+
+@mixin header-theme {
+    background: none repeat scroll 0 0 $pale-blue;  
+    margin: 0;
+    width: 100%;
+}
+
+@mixin navigation-list {
+    list-style-type:circle;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    > li{
+        display:block;
+        float:left;
+        margin: 0 0.5em;
+        &:last-child{
+            margin-right:0;
+        }
+    }
+}
+
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// custom mixins for this project;
+@mixin text-shadow() {
+    text-shadow: 3px -2px 2px rgba(89, 89, 89, .3);
+}
+
+// basic box-shadow
+@mixin bsc-box-shadow() {
+    -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, .3);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, .3);
+}
+
+// inner outer box-shadow
+@mixin io-box-shadow() {
+    @include box-shadow(3px 4px 5px -4px rgba(0, 0, 0, .2),inset 0px 5px 5px -3px rgba(0, 0, 0, .2));
+}
+
+// dropmenu box-shadow
+@mixin drp-box-shadow() {
+    -moz-box-shadow: 0 0px 10px 0px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 0px 10px 0px rgba(0, 0, 0, .3);
+    box-shadow: 0 0px 10px 0px rgba(0, 0, 0, .3);
+}
+
+// inset box-shadow - contact form
+@mixin inset-box-shadow() {
+  -webkit-box-shadow: inset 0 1px 2px 1px #000;
+    -moz-box-shadow: inset 0 1px 2px 1px #cccccc;
+      box-shadow: inset 0 1px 2px 1px #cccccc;
+}
+
+// rounded corners
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// linear gradient mixin
+//noinspection ALL
+@mixin gradient($first, $second) {
+  background: $second;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $first), color-stop(100%, $second));
+  background-image: -webkit-linear-gradient($first, $second);
+  background-image: -moz-linear-gradient($first, $second);
+  background-image: -o-linear-gradient($first, $second);
+  background-image: -ms-linear-gradient($first, $second);
+  background-image: linear-gradient($first, $second);
+  // filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="$first", endColorstr="$second"); /* For Internet Explorer 5.5 - 7 */
+  // -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="$first", endColorstr="$second")'; /* For Internet Explorer 8 */
+}
+
+@mixin radial-gradient($first, $second) {
+  background: $second;
+  background-image: -ms-radial-gradient(center bottom, ellipse farthest-corner, $first 0%, $second 100%);
+  background-image: -moz-radial-gradient(center bottom, ellipse farthest-corner, $first 0%, $second 100%);
+  background-image: -o-radial-gradient(center bottom, ellipse farthest-corner, $first 0%, $second 100%);
+  background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 545, color-stop(0, $first), color-stop(1, $second));
+  background-image: -webkit-radial-gradient(center bottom, ellipse farthest-corner, $first 0%, $second 100%);
+  background-image: radial-gradient(ellipse farthest-corner at center bottom, $first 0%, $second 100%);
+}
+
+@mixin red-circle() {
+  background-color: $accent-red;
+  border-radius: 2em;
+  color: $white;
+  font-family: $sans-serif-stack;
+  font-size: 1.025em;
+  height: 2em;
+  margin-top: -0.35em;
+  padding: 0.4em 0.5em 0;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+}
+
+@mixin box_rgba($rgba) {
+  background-color: transparent;
+  background-color: $rgba;
+}
+// adds clearfix styles to any element; (better than Compass clearfix becuase Compass uses overflow: hidden;
+@mixin clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+// create a column;
+@mixin na-grid($width, $margin-left) {
+    width: $width;
+    margin-left: $margin-left;
+    float: left;
+    margin-right: -100%;
+    clear: none;
+}
+// undo a column (typically used in a tablet or mobile layout);
+@mixin na-grid-undo() {
+    width: 100%;
+    margin-left: 0;
+    float: none;
+    margin-right: 0;
+}
+
+// content just for Webkit (Chrome & Safari);
+@mixin forWebkit() {
+    @media (-webkit-min-device-pixel-ratio: 0) {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin verticalalign {
+  display: block;
+  height: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin icon-in-field($c:"\f002") {
+  position: relative;
+
+  &:after {
+    @include fontAwesome($c);
+
+    position: absolute;
+    right: 0.5em;
+    top: 0.3em;
+  }
+
+  @include breakpoint($desk) {
+    &:after {
+      top: 0.6em;
+    }
+  }
+}

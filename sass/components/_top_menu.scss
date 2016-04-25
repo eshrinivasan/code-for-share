@@ -1,0 +1,172 @@
+/*
+ * Top Menu or User Menu, may contain Search
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+.top-menu-container {
+    font-size: em(16);
+
+    @include breakpoint($no-queries) {
+      height: 30px;
+    }
+
+    @include sizeDesktop(){
+        display: block;
+        width: 100%;
+        padding-top: 0em;
+        overflow: hidden;
+        height: 37px;
+        position: absolute;
+        top: 0;
+    }
+
+
+  .search{
+    .input-group{
+      display:none;
+      @include sizeDesktop(){
+        float:right;
+        display:block;
+      }
+
+      @include breakpoint($lg-desk){
+        display:block;
+      }
+    }
+  }
+
+  .menu-name-menu-corporate-top-menu &{
+    display:none;
+
+    @include sizeDesktop(){
+      display:block;
+    }
+
+  }
+}
+
+.menu-top-menu {
+	padding: 0;
+	margin: 0;
+
+	a {
+        @extend %tablet-navigation-menu-anchor;
+        color: $white;
+        padding:0 0.714em;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+	li {
+		@extend %tablet_navigation_list_item;
+        background-color: $device-nav;
+
+        &:hover {
+            background-color: $main-nav-hover;
+        }
+	}
+
+    .front & {
+        @include breakpoint($no-queries) {
+            top: 10px;
+            right: 0px;
+        }
+
+        @include breakpoint($desk) {
+            right: 0px;
+            top: 10px;
+        }
+
+        @include breakpoint($lg-desk) {
+            right: 0px;
+            top: 10px;
+        }
+    }
+
+    .menu-name-menu-corporate-top-menu &{
+        @include sizeDesktop(){
+            right: 0px;
+            top: 10px;
+        }
+    }
+
+    @include sizeDesktop() {
+		float: right;
+	    position: absolute;
+	    right: 0;
+	    top: 0;		  
+		@include navigation-list;			
+		display: block;
+
+		li {
+			width: auto;
+			background:none;				
+			height:auto;
+            line-height:1.2;
+			margin:0;
+			border:none;
+
+			&:hover {
+				background: none;
+			}
+		}
+		
+		.last {
+			a {
+				color: $accent-red;
+				font-weight: bold;
+
+                &:hover {
+                    color: $accent-red;
+                }
+			}
+		}
+
+		li:first-child {
+			a {
+				border-left: none;	
+			}
+		}
+
+		a {
+			color: $standard-link;
+			font-family: $sans-serif-stack;
+			border-left: 1px solid #999;
+            height: auto;
+
+
+			&:hover{
+                color: $standard-link-hover;
+            }
+        }
+
+
+
+    }
+  @include font-reset(0.813em, 0.813em);
+}
+
+.l-header{
+  .block-top-navigation{
+    display:none;
+    @extend .spaced-links;
+    @include sizeDesktop(){
+      @include navigation-list;
+      display:block;
+      float:right;
+    }
+  }
+}
+
+.menu-name-menu-investor-top-menu{
+  .last{
+    display:none;
+
+    .page-investors &{
+      display:block;
+    }
+  }
+}

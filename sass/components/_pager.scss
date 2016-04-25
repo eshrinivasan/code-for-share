@@ -1,0 +1,27 @@
+
+  .l-content {
+    .pager {
+      display:block;
+      .pager__item--first, .pager__item--last, .pager__item--ellipsis {
+        display:none;
+        @include breakpoint($tab-portrait) {
+          display:inline-block;
+        }
+      }
+      .pager__item--previous {
+        margin-left:0;
+
+        @include breakpoint($tab-portrait) {
+          margin-left:1.5em;
+        }
+      }
+      .pager__item {
+        padding:0;
+        margin-left:.8em;
+
+        @include breakpoint($tab-portrait) {
+          margin-left:1.5em;
+        }
+      }
+    }
+  }

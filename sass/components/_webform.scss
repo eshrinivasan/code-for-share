@@ -1,0 +1,568 @@
+.webform-client-form{
+    font-size:1em;
+    padding-top:0;
+    position:relative;
+
+      fieldset{
+        padding:0;
+        border:none;
+        margin:0 1px;
+
+        input[type=text]{
+          width:90%;
+
+          @include breakpoint($tab-portrait){
+            width:62.8%;
+          }
+        }
+
+        .form-actions{
+          margin-bottom:0.5em;
+        }
+
+        input[type=submit] {
+          background: none;
+          border:none;
+          color: #025191;
+          text-decoration: underline;
+          text-align: left;
+          padding: 0.5em 0;
+        }
+      }
+
+      input[type=text],
+      input[type=email]{
+        width:90%;
+        line-height:2;
+        height:32px;
+
+        @include breakpoint($tab-portrait){
+          width:62%;
+        }
+
+        &.error{
+          border:1px solid red;
+          color:red;
+        }
+      }
+
+      .form-textarea-wrapper{
+        width:90%;
+        
+        @include breakpoint($tab-portrait){
+          width:62%;
+        }
+      }
+
+      input[type=submit]{
+        font-size:1em;
+      }
+
+      .webform-component-markup{
+        margin-right: 0.5em;
+
+        p{
+          margin:0px;
+        }
+      }
+
+      .webform-component--widget-icon{
+        .bc-widget-source-code-icon{
+          background:$bc-widget-thumbnail;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                          src=$bc-widget-thumbnail,
+                          sizingMethod='scale');
+
+          width:139px;
+          height:132px;
+          display:block;
+        }
+
+      }
+
+      .webform-component--badge-icon,
+      .webform-component--widget-icon,
+      .webform-component--icon {
+        position:relative;
+        top: 0px;
+        left: 10px;
+
+        @include breakpoint($tab-portrait){
+          position: absolute;
+          left:0px;
+        }
+
+      }
+
+      .webform-component--badge-icon{
+          width: 139px;
+      }
+
+      .webform-component--icon {
+        width: 125px;
+      }
+       input[type=text],
+       input[type=email],
+      .webform-component-checkboxes,
+      .form-actions,
+      .form-textarea-wrapper{
+          margin-left:10px;
+      }
+
+  .field-suffix:after{
+        color:red;
+        content:"*";
+      }
+
+      label.required{
+        color:red;
+        font-weight: bold;
+      }
+
+      .style_1, .style_2, .style_3, .style_4, .style_5, .style_6{
+        background: $brokercheck_sprite_image;
+        margin-left:0;
+        display:table-cell;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                        src=$brokercheck_sprite_image,
+                        sizingMethod='scale');
+      }
+
+      .style_1, .style_2, .style_3{
+        width: 146px;
+        height: 72px;
+      }
+
+      .style_4, .style_5, .style_6 {
+        width: 146px;
+        height: 37px;
+      }
+
+      .style_3, .style_6{
+        background-color: #666;
+      }
+
+      .style_1{
+        background-position: 0px 1px;
+      }
+
+      .style_2{
+        background-position: 0 -71px;
+      }
+
+      .style_3{
+        background-position: 0 -143px;
+        height: 72px;
+      }
+
+      .style_4{
+        background-position: 0 -214px;
+        height:37px;
+      }
+
+      .style_5{
+        background-position: 0 -251px;
+      }
+
+      .style_6{
+        background-position: 0 -287px;
+      }
+
+
+}
+
+.webform-confirmation{
+    .render-html{
+      width:100%;
+      min-height:105px;
+      height:auto!important;
+      height:105px;
+    }
+}
+
+.webform-client-form-11779 {
+  input[type=text],
+  input[type=email],
+  .webform-component-checkboxes,
+  .form-actions{
+    margin-left:10px;
+
+    @include breakpoint($tab-portrait){
+      margin-left:130px;
+    }
+  }
+  .form-checkboxes {
+    display:inline-block;
+  }
+
+  .webform-component-checkboxes{
+    input{
+      width:auto;
+      display:inline-block;
+    }
+    @include breakpoint($tab-portrait){
+      margin-left:130px;
+    }
+  }
+  .form-actions {
+    @include breakpoint($tab-portrait){
+      margin-left:130px;
+    }
+  }
+}
+.webform-client-form-11717,
+.webform-client-form-11718{
+  input[type=text],
+  input[type=email],
+  .webform-component-checkboxes,
+  .form-actions{
+    margin-left:10px;
+
+    @include breakpoint($tab-portrait){
+      margin-left:152px;
+    }
+  }
+
+  .webform-component-checkboxes{
+    input{
+      width:auto;
+    }
+  }
+  fieldset{
+    input[type=text],
+    .container-inline{
+      margin-left:10px;
+
+      @include breakpoint($tab-portrait) {
+        margin-left: 148px;
+      }
+    }
+
+    .fieldset-wrapper{
+      .container-inline{
+        margin-top:-8px;
+        margin-bottom:15px;
+      }
+    }
+  }
+}
+
+//cvent web form
+.webform-client-form-64914{
+  padding-top:10px;
+
+  input[type=text],
+  input[type=email]{
+    width:90%;
+
+    @include breakpoint($tab-portrait){
+      width:90%;
+    }
+  }
+
+  input[type=text],
+  input[type=email],
+  .form-actions{
+    margin-left:0;
+  }
+
+  label.error{
+    font-size:0.75em;
+  }
+}
+
+
+div.modal-forms-modal-content div.messages {
+    margin: 5px auto;
+    width: 100%;
+}
+
+div.ctools-modal-content .modal-content{
+    overflow-x:hidden;
+}
+
+
+div.ctools-modal-content fieldset,
+div.ctools-modal-content .form-radios,
+div.ctools-modal-content .form-checkboxes{
+  clear:none;
+}
+
+div.modal-forms-modal-content .modal-title{
+  font-size:2em;
+  font-weight:normal;
+  font-family:$serif-stack;
+}
+
+.badge_style{
+  display:inline-block;
+}
+
+.modal-content{
+  .modal-confirmation-close-link{
+    display:none;
+  }
+}
+
+/* Override inline dom styles from modal.js */
+#modalContent {
+  position: fixed !important;
+  top: 2% !important;
+  bottom: 12% !important;
+  right: 4% !important;
+  left: 4% !important;
+
+  @include breakpoint($tab-portrait){
+    top: 30% !important;
+  }
+}
+/* Limit max width to 1000px */
+div.ctools-modal-content {
+  width: 100% !important;
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+div.ctools-modal-content .modal-content {
+  width: 100% !important;
+}
+.webform-client-form-15930,
+.webform-client-form-11912,
+.webform-client-form-64780 {
+  width: 100%;
+  padding: 1.5em 1em 2.5em;
+  background-color: $webform-background;
+  position: relative;
+  .webform-container-inline.webform-datepicker div.form-item.form-type-select {
+    display: none;
+
+  }
+
+  label.terms {
+    font-weight: normal;
+    display: inline;
+  }
+  .tac {
+    position: absolute;
+    bottom:-1em;
+    display:block;
+    width:100%;
+
+    @include breakpoint($tab-portrait) {
+      bottom:0em;
+    }
+  }
+  .required {
+    display: none;
+  }
+  .form-submit {
+
+    width: 100%;
+    margin:.5em auto;
+
+    @include breakpoint($tab-landscape) {
+      width: 21%;
+      margin:0 0 .5em 0;
+    }
+
+  }
+  .form-actions {
+    margin-top: 1em;
+  }
+  input[type=submit] {
+    font-size: 1.2em;
+  }
+  input[placeholder] {
+    font-style: italic;
+  }
+
+  .search-input-wrapper {
+    display:block;
+    margin-left:.5em;
+
+    @include breakpoint($tab-portrait) {
+      width: 50%;
+      display: inline-block;
+    }
+
+    @include breakpoint($lg-desk) {
+      width: 60%;
+      display: inline-block;
+      margin-left:0;
+    }
+    label {
+      display:block;
+      @include breakpoint($tab-landscape) {
+        display:inline;
+      }
+      font-size: 1.3em;
+      margin: .5em 0 0 0;
+      top: .2em;
+      position: relative;
+    }
+    input[type=text] {
+
+
+      width: 90%;
+      @include breakpoint($tab-portrait) {
+        width:75%;
+      }
+      margin-left: 0;
+    }
+  }
+  .from-date-wrapper, .to-date-wrapper {
+
+    display:block;
+    position: relative;
+    vertical-align: top;
+    margin-left: .5em;
+    width: auto;
+
+    @include breakpoint($tab-landscape) {
+      display: inline-block;
+    }
+
+
+    label {
+      display: block;
+      @include breakpoint($tab-landscape) {
+        display:inline;
+      }
+      position: relative;
+      top: .4em;
+      margin: 0;
+    }
+    input[type="text"] {
+      margin-left: 0;
+      width:90%;
+      @include breakpoint($tab-landscape) {
+        width:50%;
+      }
+      @include breakpoint($desk) {
+        width:52%;
+      }
+      @include breakpoint($lg-desk) {
+        width:45%;
+      }
+
+    }
+  }
+  .from-date-wrapper {
+    margin-bottom:0;
+
+    @include breakpoint($tab-landscape) {
+      width: 28%;
+      margin-bottom:1em;
+    }
+    @include breakpoint($lg-desk) {
+      width: 20%;
+      margin-bottom:1em;
+    }
+
+  }
+  .to-date-wrapper {
+
+
+    @include breakpoint($tab-landscape) {
+      width: 15%;
+      margin-left: 0;
+
+      input[type="text"] {
+        width: 90%;
+      }
+
+    }
+    @include breakpoint($lg-desk) {
+      width: 10%;
+      margin-bottom:1em;
+    }
+
+  }
+  .webform-component--fieldset--date-range-markup {
+
+    display:block;
+    margin-left:.8em;
+    margin-bottom:0;
+
+    @include breakpoint($tab-landscape) {
+
+      display: inline;
+      margin-right: .3em;
+      margin-left:0;
+      margin-bottom:1em;
+    }
+    .date-range-separator {
+      font-size:.9em;
+    }
+
+  }
+  .checklist-wrapper {
+
+    display:block;
+    vertical-align: top;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    @include breakpoint($tab-landscape) {
+      width: 24%;
+      display: inline-block;
+    }
+
+  }
+  .wrapper-wide {
+
+    @include breakpoint($tab-landscape) {
+      width: 45%;
+      .form-item {
+        display: inline-block;
+        width: 45%;
+      }
+    }
+  }
+
+  .form-type-checkbox {
+    label.option{
+      font-size: .85em;
+      margin-left: 0.625em;
+      width: 75%;
+      line-height: 1.5em;
+      display:inline-block;
+    }
+
+    .form-checkbox {
+      line-height:2;
+      margin:0;
+      background: $white;
+      border-collapse: separate;
+      float: left;
+      height: 25px;
+      position: relative;
+      width: 25px;
+      -webkit-box-shadow: inset 0 1px 2px 1px #cccccc;
+      /* -moz-box-shadow: 0 1px 2px 1px #cccccc;
+      box-shadow: inset 0 1px 2px 1px #cccccc;*/
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      &.checked:before,
+      &:checked:before {
+        @include fontAwesome("\f00c", $accent-red);
+        position: absolute;
+        display: block;
+        left: 4px;
+        top: 4px;
+        font-size: 18px;
+      }
+  }
+  }
+}
+
+

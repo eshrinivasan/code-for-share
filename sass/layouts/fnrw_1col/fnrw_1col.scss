@@ -1,0 +1,152 @@
+@import "variables/grid";
+@import "variables/colors";
+@import "variables/typography";
+@import "abstractions/placeholders";
+//Do not use no-queries code within layout templates scss as it wont apply instead use finra-theme.no-query.scss
+
+.one-col-main{
+	.l-content{ 
+		@include grid-span(12, 1, 12); 
+	}
+
+  /*.has-one-sidebar{
+      .l-content{
+          @include grid-span(9, 1, 12); 
+          float:left;
+      }
+
+      .l-region--sidebar-third{
+          @include grid-span(3, 10, 12);
+          float:left;
+      }
+  }*/
+
+}
+
+.one-col-content{
+
+  .panel-2col-bricks {
+    .panel-col-first, .panel-col-last {
+      float:none;
+      width:100%;
+
+      @include breakpoint($tab-landscape){
+        float:left;
+        width:50%;
+      }
+    }
+  }
+
+      .panels-flexible-column-finra_custom_2_column_layout-main{
+          @include grid-span(1, 1, 1);
+          border:none;
+
+          @include breakpoint($tab-portrait){
+              @include grid-span(6, 1, 6);
+              border:none;
+          }
+
+          @include sizeDesktop(){
+            @include grid-span(9, 1, 12);
+            border-right:1px solid $accent-gray;
+            padding-right:1em;
+          }
+      }
+
+
+        .panels-flexible-finra_custom_2_column_layout {
+            .panels-flexible-column-inside{
+              padding:0;
+            }
+            .panels-flexible-region-inside{
+              padding:0;
+            }
+        }
+
+        .panels-flexible-region-finra_custom_2_column_layout-center-inside{
+              @include breakpoint($tab-portrait){
+                @include grid-span(6, 1, 6);
+              }
+
+            @include sizeDesktop(){
+               @include grid-span(12, 1, 12);
+            }
+        }
+
+
+        .panels-flexible-row-finra_custom_2_column_layout-3-inside{
+                .panels-flexible-region-first{
+                    @include grid-span(1, 1, 1);
+
+                    @include breakpoint($tab-portrait){
+                      @include grid-span(3, 1, 6);
+                    }
+
+                }
+
+                .panels-flexible-region-last{
+                  @include grid-span(1, 1, 1);
+
+                  @include breakpoint($tab-portrait){
+                    @include grid-span(3, 4, 6);
+                  }
+
+                }
+
+          //@include background-grid($color: #ddd);
+          @include breakpoint($tab-portrait){
+            @include grid-span(6, 1, 6);
+          }
+
+          @include sizeDesktop(){
+            @include grid-span(12, 1, 12);
+          }
+
+        }
+
+    .l-sidebar-third{
+        @include grid-span(1,1,1);
+
+        @include breakpoint($tab-landscape){
+          @include grid-span(6, 1, 6);
+        }
+
+        @include sizeDesktop(){
+          @include grid-span(3, 10, 12);
+        }
+
+      }
+
+  //border-right: 1px solid #c7cfd3;
+  .panels-flexible-column-finra_custom_2_column_layout-main {
+      border-right:none;
+
+      @include sizeDesktop(){
+        border-right: 1px solid $accent-gray;
+      }
+  }
+
+  .panels-flexible-region-finra_custom_2_column_layout-right {
+       width:100%;
+       @include breakpoint($tab-portrait){
+         width:99%;
+       }
+  }
+  .panels-flexible-region-finra_custom_2_column_layout-left-inside{
+      .front &{
+        border-right:none;
+
+        @include sizeDesktop(){
+          border-right: 1px solid $accent-gray;
+          padding-right: 1em;
+
+        }
+    }
+  }
+
+  
+
+}
+
+
+

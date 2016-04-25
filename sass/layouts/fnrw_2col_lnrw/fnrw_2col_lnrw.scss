@@ -1,0 +1,65 @@
+@import "variables/grid";
+@import "variables/colors";
+@import "variables/typography";
+@import "abstractions/placeholders";
+
+.l-region--sidebar-first{
+    display:block;
+	@include breakpoint($tab-portrait){
+        @include grid-span(6, 1, 6);
+	}
+	@include breakpoint($tab-landscape){
+        @include grid-span(6, 1, 6);
+	}
+	@include breakpoint($desk){
+		@include grid-span(3, 1, 12);
+        padding:0 1em;
+	}
+	@include breakpoint($lg-desk){
+		@include grid-span(3, 1, 12);
+	}
+}
+
+.has-one-sidebar{
+    .l-content{
+        @extend %l-content;
+
+        @include breakpoint($desk){
+            @include grid-span(9, 4, 12);
+        }
+        @include breakpoint($lg-desk){
+            @include grid-span(9, 4, 12);
+        }
+
+    }
+}
+
+.l-content{
+  @extend %l-content;
+
+  @include breakpoint($desk){
+      @include grid-span(12, 1, 12);
+  }
+
+}
+
+.panel-3col,
+.panel-3col-33,
+.panel-3col-stacked,
+.panel-3col-33-stacked{
+  @extend %responsive-3col-content;
+}
+
+.panel-2col,
+.panel-2col-bricks,
+.panel-2col-stacked{
+  @extend %responsive-2col-content;
+}
+
+.l-region--sidebar-first{
+    padding:0 .6em 0 0.6em;
+
+    @include sizeDesktop(){
+      padding:0 1.6em 0 0;
+    }
+}

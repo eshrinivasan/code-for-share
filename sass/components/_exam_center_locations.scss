@@ -1,0 +1,336 @@
+
+.block--finra-exam-center-location{
+  .block__title{
+      width: auto;
+      max-width: 480px;
+      display:inline-block;
+      border:none;
+  }
+
+  .finra-exam-center-location-form-block{
+        width: auto;
+        //max-width: 480px;
+        position:relative;
+        background:#f1f1f1;
+        padding:0.5em 1em;
+
+        ul li{
+          font-size:1em;
+        }
+
+        .ajax-progress{
+          display:inline-block;
+        }
+
+        .form-item-replace-select,
+        .form-submit{
+          display:inline-block;
+        }
+
+        .form-item-country-select{
+          display:none;
+        }
+
+        .form-item-options-radio{
+          display:block;
+          font-size:0.875em;
+
+          @include breakpoint($tab-portrait){
+            display:inline-block;
+          }
+          input{
+            width:auto;
+          }
+        }
+
+        .form-item-replace-select{
+          float:left;
+        }
+
+        .form-item-replace-select select{
+          width:100%;
+        }
+
+        .form-item-replace-select{
+          width:100%;
+            @include breakpoint($tab-portrait){
+                width:70%;
+            }
+        }
+
+        #country_select_div{
+          width: 70%;
+          display: inline-block;
+          float: left;
+        }
+
+        .form-submit{
+          width:33%;
+          margin:0 5px;
+          display:block;
+
+          @include breakpoint($tab-portrait){
+            display:inline-block;
+            width: 20%;
+            margin-top:1.6em;
+          }
+        }
+  }
+
+  .finra-exam-center-location-form:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.views-exposed-form-mapofleaf-exam-center-locations-page.ctools-auto-submit-full-form{
+  background:#CCC;
+  padding:0.25em;
+
+  .views-widget-options_radio_map{
+    .form-item-options-radio-map{
+        display:inline;
+    }
+
+    #edit-options-radio-map{
+        margin-top: 0.4em;
+    }
+  }
+
+  .views-exposed-form {
+       background:#CCC;
+      .views-exposed-widgets{
+
+          .views-exposed-widget {
+            width:auto;
+            float:none;
+
+            @include breakpoint($tab-portrait){
+              float:left;
+            }
+
+            .form-item-field-addressfield-administrative-area{
+
+                @include breakpoint($tab-landscape){
+                  width: auto;
+                }
+            }
+
+
+            .form-item-options-radio-map input{
+                width:auto;
+            }
+
+            label{
+              width:50%;
+
+              @include breakpoint($tab-landscape){
+                width: auto;
+              }
+            }
+
+
+              &.views-widget-filter-field_examvendors_tid{
+                float:left;
+
+                @include breakpoint($tab-landscape){
+                  float:right;
+                }
+
+                label, .views-widget{
+                  display: inline-block !important;
+                }
+              }
+
+
+
+        }
+      }
+
+   
+  }
+    
+
+  .views-widget-filter-field_addressfield_administrative_area {
+
+        #edit_field_addressfield_administrative_area_chosen{
+          width:26%;
+
+          @include breakpoint($tab-portrait){
+            width:auto !important;
+          }
+        }
+
+      .form-item {
+            label,  div.form-select{
+              display:block;
+
+              @include breakpoint($tab-portrait){
+                display: inline-block !important;
+              }
+
+
+            }
+
+      }
+
+      .form-type-select select{
+          padding:0.4em 0;
+      }
+    }
+
+    .views-widget-filter-field_addressfield_country{
+
+          #edit_field_addressfield_country_chosen{
+            width:auto!important;
+          }
+
+            .form-item-field-addressfield-country{
+                width:65%;
+
+                @include breakpoint($tab-portrait){
+                  width:auto !important;
+                }
+            }
+
+            .views-widget{
+               display: inline-block;
+
+              label{
+                display:inline-block;
+              }
+            }
+
+        label{
+          display:none;
+        }
+    }
+
+
+
+    .views-submit-button{
+        display:none;
+    }
+}
+
+
+.view-mapofleaf .item-list{
+  ul{
+      overflow:hidden;
+      padding:0;
+
+      li{
+          width: 49%;
+          float: left;
+          list-style: none;
+          padding:0.5em;
+          margin:0.1em;
+
+          background:#f2f2f2;
+          min-height:180px;
+
+          .node__title{
+            margin:1em 0 0;
+          }
+
+          .field{
+            font-size:0.875em;
+          }
+
+          .field-label,.field-items{
+            display:inline-block;
+          }
+
+          .field--name-field-scheduling-url{
+            margin:1em 0;
+          }
+
+
+      }
+
+      li:before{
+            display:none;
+      }
+  }
+}
+
+.view-mapofleaf{
+      .view-display-id-attachment_1 {
+        .item-list {
+          ul li {
+            background:#f2f2f2;
+            min-height:80px;
+          }
+        }
+      }
+
+      .view-display-id-attachment_2 {
+        .item-list {
+          ul li {
+            background:#f2f2f2;
+            min-height:180px;
+          }
+        }
+      }
+
+    .field--name-field-coordinates{
+      position: relative;
+      top: 0;
+      right: 0;
+      img{
+        width:150px;height:150px;
+      }
+
+      @include breakpoint($tab-portrait){
+        position:absolute;
+      }
+    }
+
+    .leaflet-marker-pane{
+      .leaflet-label{
+          display:none;
+      }
+    }
+}
+
+
+
+
+.leaflet-popup{
+    .node__title{
+      margin:1em 0 0;
+    }
+
+    .leaflet-popup-content-wrapper{
+      border-radius: 0;
+
+        .field{
+          .field-label,
+          .field-items{
+            font-size:0.875em;
+            display:inline-block;
+          }
+        }
+
+        .field--name-field-scheduling-url{
+          margin:1em 0;
+        }
+
+      .field--name-field-coordinates{
+        display:none;
+      }
+    }
+
+  .examlocationpopup{
+      .title,
+      .address,
+      .phone,
+      .scheduling_url{
+        margin:1em 0;
+      }
+  }
+
+}
+
+

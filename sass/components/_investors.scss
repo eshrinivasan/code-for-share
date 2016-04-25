@@ -1,0 +1,209 @@
+.page-investors {
+ .one-col-content {
+   .panels-flexible-column-first {
+     float: none;
+     width: 100%;
+     border-right: none;
+
+     @include breakpoint($desk) {
+       float: left;
+       width: 74.64789%;
+       border-right: 1px solid #c7cfd3;
+     }
+   }
+   .l-sidebar-third {
+     float: none;
+     width: 100%;
+
+     @include breakpoint($desk) {
+       float: right;
+       width: 23.94366%;
+     }
+   }
+ }
+  .left {
+    float:left;
+    padding:0;
+    margin:0;
+  }
+
+  .three-column-block {
+    .col1 {
+      .icon {
+        width: 130px;
+      }
+
+      img {
+        margin: 2em 1em 0 1em;
+      }
+    }
+  }
+  .pane-title:after {
+    display:none;
+    font-family:$sans-serif-stack;
+
+    @include breakpoint($tab-portrait){
+      font-family:$serif-stack;
+    }
+  }
+
+  h2 { 
+    text-transform:none;
+  }
+
+  #block-bean-professional-designations-discla h2{//DRU-2380
+      text-transform:uppercase;
+  }
+
+  h2.content-title {
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-transform: none;
+    font-size: 1.5em;
+  }
+
+  h2.core-short-title {
+    font-size:1.3em;
+  }
+  
+  h3 {
+    padding: 0;
+    margin-top: .5em;
+    font-weight: normal;
+    font-size: 1.05em;
+  }
+  .third, .half {
+    padding-left: 0px;
+  }
+  .half {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .sub-heading {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $accent-gray-dark;
+    font-family: $serif-stack;
+    font-style: italic;
+    margin-top:1em;
+  }
+  .three-column-block {
+
+    img {
+      display:none;
+      @include breakpoint($tab-landscape){
+        display:block;
+      }
+    }
+    .field-collection-container {
+      margin-top: 1em;
+    }
+    .field-collection-view {
+      padding:.5em 0;
+    }
+  }
+
+
+  .investors-i-want-to {
+    background-color: #E4EFF5;
+    padding: 1.5em;
+
+    ul.i-want-to {
+      padding: 0;
+      margin-top: .4em;
+      li {
+        padding: 0;
+        background: #fff;
+        margin-bottom: 1em;
+        margin-left: 0;
+
+        &:hover {
+          background-color: #0066A1;
+          color: #fff;
+        }
+        &:before {
+          display: none;
+        }
+        a {
+          padding: 10px 4px 10px 30px;
+          display: inline-block;
+          width: 100%;
+
+          &:before {
+            padding-top: 0.05em;
+
+            content: "\f105";
+            font-family: FontAwesome;
+            color: #fb483d;
+            font-style: normal;
+            font-size: 1em;
+            font-weight: normal;
+            line-height: 1;
+            padding-right: 0.9em;
+            position: absolute;
+            margin-left: -1em;
+            margin-right: 0;
+            -webkit-font-smoothing: antialiased;
+            content: "\f101";
+          }
+
+        }
+        a:hover {
+          color: #fff;
+          font-weight: bold;
+          text-decoration: none;
+          &:before {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .pane-finra-custom-blocks-broker-check-widget-block {
+    margin-bottom:1em;
+    @include breakpoint($tab-portrait){
+      display:block;
+    }
+  }
+  .pane-bean-investors-prepare-to-invest-ho,
+  .pane-bean-investors-work-with-profession,
+  .pane-bean-investors-protect-your-money-h
+  {
+    margin-bottom:3.5em;
+  }
+}
+.bean-links-list.tools-and-calculators {
+  .link-list-icon {
+    display:none;
+
+    @include breakpoint($tab-landscape) {
+      width: 35px;
+      display: block;
+      float: left;
+      margin-left: 5px;
+    }
+
+    img {
+      margin-top: .2em;
+    }
+  }
+
+  .field-collection-container {
+    .link-list-icon + a {
+      width:60%;
+
+      @include breakpoint($desk) {
+        width: 75%;
+      }
+    }
+    a {
+      display: block;
+      float: left;
+    }
+    .last {
+      border-bottom:none;
+    }
+  }
+}

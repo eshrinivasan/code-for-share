@@ -1,0 +1,50 @@
+@import "variables/grid";
+@import "variables/colors";
+@import "variables/typography";
+@import "abstractions/placeholders";
+
+.l-content{
+	@extend %l-content;
+	.l-region--sidebar-first{
+		@include grid-span(1, 1, 1);
+
+		@include breakpoint($tab-portrait){			
+			@include grid-span(3, 1, 6);
+		}
+		@include breakpoint($tab-landscape){
+			@include grid-span(3, 1, 6);
+		}
+		@include breakpoint($desk){
+			@include grid-span(6, 1, 12);
+		}
+		@include breakpoint($lg-desk){
+			@include grid-span(6, 1, 12);
+		}
+
+	}
+
+.l-region--sidebar-second{
+		@include grid-span(1, 1, 1);			
+	
+		@include breakpoint($tab-portrait){
+			@include clearfix;			
+			@include grid-span(3, 4);		
+		}
+		@include breakpoint($tab-landscape){
+			@include clearfix;			
+			@include grid-span(3, 4);		
+		}
+		@include breakpoint($desk){
+			@include grid-span(6, 7, 12);
+		}
+		@include breakpoint($lg-desk){
+			@include grid-span(6, 7, 12);
+		}
+
+	}
+	@include clearfix;
+}
+
+.l-region--sidebar-third{
+	@extend %l-region--sidebar-third;
+}

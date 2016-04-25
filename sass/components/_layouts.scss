@@ -1,0 +1,180 @@
+html, body {
+    padding:0;
+    overflow-x:hidden;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+    position:relative;
+}
+
+.outer-wrap,
+.l-page
+{
+	margin: 0 auto;
+	width:100%;
+	overflow:hidden;
+	@include sizeDesktop(){
+		width:100%;
+	}
+  .core-title {
+    padding-left:0;
+  }
+}
+
+.l-header{
+	width:100%;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.footer-container,
+.top-menu-container,
+.navmenu-brand,
+.header-wrap,
+.top-navigation,
+.main-menu-navigation,
+.l-messaging,
+.l-branding,
+.l-region--hero,
+.l-main,
+.hero-content-container,
+.mega-footer,
+.block-utility-footer{
+  	@include sizeDesktop(){
+  		width:$desk;
+  		margin:0 auto;
+  	}
+
+    @include breakpoint($no-queries){
+        width:$ie-desk;
+        margin:0 auto;
+    }
+
+    @include breakpoint($ie7-queries){
+      width:$ie-desk;
+      margin:0 auto;
+    }
+
+   	@include breakpoint($lg-desk) {
+  		width:$lg-desk;
+  		margin:0 auto;
+  	}
+}
+
+
+.l-navigation{
+	display:none;
+
+	@include breakpoint($tab-portrait) {
+		display:none;
+	}
+	@include breakpoint($tab-landscape) {
+		display:none;
+	}
+
+	@include sizeDesktop(){
+		display:block;
+	}
+}
+
+.l-main {
+	  line-height: 1.428;
+    padding-top:25px;
+    @include clearfix;
+}
+
+.l-footer{
+	@include clearfix;
+	width:$fullwidth;
+	clear:both;
+	background: $pale-blue;
+}
+
+.navbar-offcanvas{
+  .active &{
+    background-color: $device-nav;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    overflow:auto;
+    @include single-transition(left, .3s, ease-out, 0s);
+    -webkit-backface-visibility: hidden;
+
+    @include sizeDesktop(){
+      position: relative;
+      background-color:none;
+    }
+  }
+}
+
+.navbar-offcanvas{
+  @include grid-span(1, 1, 1);
+  background:$pale-blue;
+
+  .js &{
+    margin-left: -100%;
+    float: left;
+    z-index: 2;
+
+  }
+
+  .active & {
+    margin-left: 0;
+    display:block;
+    width:75%;
+
+    @include breakpoint($tab-portrait){
+      @include grid-span(3, 1, 6, 0);
+    }
+  }
+
+
+  @include sizeDesktop(){
+    .js & {
+      width:100%;
+      margin:0 auto;
+      position:relative;
+    }
+  }
+
+  @include breakpoint($no-queries){
+    position:relative;
+  }
+
+}
+
+.navbar-offcanvas{
+  @include breakpoint($no-queries){
+    margin-left:0;
+  }
+
+}
+
+.outer-wrap{
+  
+
+  .js & {
+    margin-left: 0;
+    float: left;
+    z-index: 1;
+  }
+
+  .active & {
+    margin-left: 75%;
+    @include single-transition(left, .3s, ease-out, 0s);
+    -webkit-backface-visibility: hidden;
+
+     @include breakpoint($tab-portrait){
+       @include grid-span(6, 4, 6, 0);
+     }
+  }
+
+  @include sizeDesktop(){
+    @include grid-span(12, 1, 12);
+  }
+}
+
+.l-main{
+   .element-invisible{
+        display:none;
+    } 
+}

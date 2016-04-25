@@ -1,0 +1,32 @@
+$closeIcon : url("../images/Close.gif");
+$bubbleImage:  url("../images/Bubble_v4.png");
+
+#mapApplication.mapareadr{
+  text-align: center;
+  margin: 0px auto;
+
+  svg{
+    overflow:visible!important;
+    width:100%;
+  }
+
+  .mapTooltip{
+    label{
+      font-size:1em;
+    }
+
+    ul{
+      position:relative;
+      overflow:auto;
+
+      .slide{
+        margin: 1em 1em;
+        .article{
+          text-align: left;
+        }
+      }
+
+    }
+
+  }
+}

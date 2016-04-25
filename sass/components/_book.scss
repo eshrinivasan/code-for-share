@@ -1,0 +1,27 @@
+aside{  
+        #block-book-navigation {
+           
+            background-color: #d8e1e8;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+
+            ul.menu ul.menu li{
+                margin-left:20px
+            }
+            ul.menu ul.menu li:before {
+                content: "\f101";
+                font-family: FontAwesome;
+                font-size: .85em;
+                position: absolute;
+                top: 9px;
+            }
+            ul.menu ul.menu li.active-trail {
+                &:before{color:white;}
+                a{
+                    margin-left: -20px;
+                    padding-left: 39px;
+                    width: 110%;
+                }
+            }
+        }
+}

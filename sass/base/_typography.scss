@@ -1,0 +1,325 @@
+/*
+ * Typography
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+/*
+Best practises for font heading size reference:
+http://typecast.com/images/uploads/modernscale.css -- Not following this reference anymore
+
+As per recent discussion (Michael, Don)
+h1 = 26px(desk), 26px(tablet), 20px(phone)
+h2 = 24px(desk), 24px(tablet), 18px(phone)
+h3 = 21px(desk), 21px(tablet), 16px(phone)
+h4 = 19px(phone)
+h5 = 18px(phone)
+h6 = 16px(phone)
+
+Updated on 12/9 as per https://jira.finra.org/browse/DRU-2995
+
+*/
+
+//For no-queries, use the breakpoint mixin within the tags look up the h1 or body no-queries definition
+
+body {
+    color: $article-text;
+    font-family: $sans-serif-stack;
+    font-size:15px;//mobile
+    line-height:1.5;
+}
+
+@include breakpoint($tab-portrait){
+  body{
+    font-size:16px;
+    line-height:1.375;
+  }
+}
+
+
+body{
+  @include breakpoint($ie-desk){
+    font-size: 16px;
+    line-height:1;
+  }
+}
+body{
+  @include breakpoint($no-queries){
+    font-size:15px;
+    line-height:1.25;
+  }
+}
+
+@include breakpoint($desk){
+   body{
+    font-size: 16px;
+    line-height:1.25;
+  }
+}
+
+@include breakpoint($lg-desk){
+  body{
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+
+blockquote{
+	border-left: 5px solid $accent-gray-light;
+    font-size: 0.875em;
+    margin: 1em 0 0.5em;
+	padding: 1em;
+
+    p {
+      margin: 0;
+    }
+}
+
+p {
+  //contacts inherits the margin top
+	margin: 1em 0 0.5em;
+
+	&.date, &.submitted {
+		@extend %subheader;
+	}
+	/* for headers placed right after paragraphs */
+	&+h1, &+h2, &+h3, &+h4, &+h5, &+h6 {
+		margin-top: 1.25em;
+	}
+}
+
+article {
+
+
+  p {
+    font-size: 0.875em;
+    text-align: left;
+  }
+
+  li {
+    p, div {
+      font-size: 1em;
+    }
+  }
+}
+
+/* Headings
+ * ------------------------------ */
+h1, h2, h3, h4, h5, h6, .heading1, .heading2, .heading3 {
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	color: $headings-color;
+	padding: 0;
+	margin: 0.5em 0;
+    font-size-adjust:0.5;
+
+  @include breakpoint($tab-portrait){
+    font-weight: 400;
+  }
+
+	/*&:first-child {DRU-1229
+		margin-top: 0;
+	}*/
+}
+
+h1,.heading1, .core-title {
+    font-size: 1.5em;
+    line-height: 1.25;
+
+	&.border {
+		border: 1px solid $accent-gray;
+		font-size: 1.250em;
+		text-transform: uppercase;
+	}
+}
+@include breakpoint($tab-portrait) {
+    h1, .heading1, .core-title {
+      font-size: 1.5em;
+      line-height: 1.125;
+    }
+}
+h1, .heading1, .core-title {
+      @include breakpoint($ie-desk) {
+        font-size: 1.625em;
+        line-height: 1.05;
+    }
+}
+
+@include breakpoint($desk) {
+  h1, .heading1, .core-title {
+    font-size: 1.625em;
+    line-height: 1.05;
+  }
+}
+
+h1, .heading1, .core-title {
+  @include breakpoint($no-queries){
+    font-size: 1.625em;
+    line-height: 1.05;
+  }
+}
+
+h2, .heading2 {
+    font-size: 1.2em;
+    line-height: 1.153;
+	width: 100%;
+
+	&.highlight {
+		color: $accent-gray-dark;
+		font-size: 0.9em;
+		letter-spacing: 1px;
+		text-transform: none;
+	}
+
+  &.core-short-title {
+    margin-top:0px;
+    padding-top:0px !important;
+  }
+
+}
+
+@include breakpoint($tab-portrait) {
+    h2, .heading2 {
+      font-size: 1.333em;
+      line-height: 1.25;
+    }
+}
+
+h2, .heading2 {
+    @include breakpoint($ie-desk) {
+      font-size: 1.375em;
+      line-height: 1.25;
+    }
+}
+
+@include breakpoint($desk) {
+    h2, .heading2 {
+      font-size: 1.375em;
+      line-height: 1.25;
+      margin-top:1.25em;
+    }
+}
+
+h2, .heading2 {
+    @include breakpoint($no-queries) {
+      font-size: 1.375em;
+      line-height: 1.25;
+      margin-top:1.25em;
+  }
+}
+
+h3, h4, h5, h6, .heading3 {
+	font-family: $sans-serif-stack-75;
+}
+
+h3, .heading3, .faqHeading {
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 1.136;
+    text-transform: none;
+    margin-top: 0.313em;
+
+	&:first-child {
+		margin-top: em(10);
+	}
+	&+p {
+		margin-top: 0.5em;
+	}
+}
+@include breakpoint($tab-portrait) {
+  h3, .heading3, .faqHeading {
+      font-size: 1.167em;
+      line-height: 1.25;
+  }
+}
+h3, .heading3, .faqHeading {
+    @include breakpoint($ie-desk) {
+      font-size: 1.125em;
+      line-height: 1;
+    }
+}
+@include breakpoint($desk) {
+  h3, .heading3, .faqHeading {
+    font-size: 1.125em;
+    line-height: 1;
+  }
+}
+h3, .heading3, .faqHeading {
+    @include breakpoint($no-queries) {
+      font-size: 1.125em;
+      line-height: 1;
+    }
+}
+
+h4 {
+	font-size: 1em;
+}
+
+@include breakpoint($tab-portrait){
+    h4 {
+        line-height:1.222;
+    }
+}
+
+h4 {
+    @include breakpoint($no-queries){
+      line-height:1.222;
+  }
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+/* Definition List
+ * ------------------------------ */
+a {
+	color: $standard-text;
+	text-decoration: none;
+    outline: 0;
+
+	&:link, &:visited {
+		color: $standard-link;
+	}
+	&:active, &:hover {
+		color: $standard-link-hover;
+		text-decoration: underline;
+	}
+	&:focus {
+		outline: thin dotted $nav-border-gray;//for accessibility purpose
+	}
+}
+
+//for accessibility purpose
+textarea:focus, input:focus{
+  outline: thin dotted $nav-border-gray;
+}
+
+object, embed {
+    outline: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+hr{
+  height:0;
+  color:$accent-gray;
+  border-style: solid;
+
+  &.dotted{
+    border:0;
+    border-top:1px dotted #C7CFD3;
+  }
+}
+
+.firm-index {
+  font-size: 0.75em;
+}

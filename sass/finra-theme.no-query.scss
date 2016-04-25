@@ -1,0 +1,184 @@
+/**
+  Output has Media queries, .lt-ie9, .lt-ie8 and .no-mq fallbacks
+**/
+
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;
+
+@import "finra-theme.styles";
+
+//Layout styles for browsers like IE8 goes in here.
+.has-one-sidebar{
+  .l-region--sidebar-first{
+    @include breakpoint($no-queries){
+      display:block;
+      @include grid-span(3, 1, 12);
+    }
+  }
+
+  .l-content{
+    @include breakpoint($no-queries){
+      @include grid-span(9, 4, 12);
+    }
+  }
+}
+
+.has-one-sidebar.has-sidebar-third{
+    .l-content{
+        @include breakpoint($no-queries){
+          @include grid-span(9, 1, 12);
+        }
+      }
+
+    .l-region--sidebar-third{
+      @include breakpoint($no-queries){
+        padding: 0;
+        @include grid-span(3, 10, 12);
+      }
+  }
+}
+
+.has-two-sidebars{
+  .l-region--sidebar-first{
+    @include breakpoint($no-queries){
+      padding:0;
+      @include grid-span(2, 1, 12);
+    }
+  }
+
+  .l-content{
+    @include breakpoint($no-queries){
+      padding: 0;
+      @include grid-span(7, 3, 12);
+    }
+  }
+
+  .l-region--sidebar-third{
+       @include breakpoint($no-queries){
+          @include grid-span(3, 10, 12);
+       }
+  }
+}
+
+.one-col-main{
+  .l-content{
+    @include breakpoint($no-queries){
+      @include grid-span(12, 1, 12);
+    }
+  }
+}
+
+
+.l-content{
+  @include breakpoint($no-queries){
+    @include grid-span(12, 1, 12);
+  }
+}
+
+.maparea7{
+  display:table;
+}
+
+.one-col-content{
+  .panels-flexible-row-finra_custom_2_column_layout-3{
+    .panels-flexible-region-first{
+      @include breakpoint($no-queries){
+        @include grid-span(3, 1, 6);
+      }
+    }
+
+    .panels-flexible-region-last{
+      @include breakpoint($no-queries){
+        @include grid-span(3, 4, 6);
+      }
+    }
+
+    @include breakpoint($no-queries){
+      @include grid-span(6, 1, 6);
+    }
+  }
+
+  .panels-flexible-column-finra_custom_2_column_layout-main{
+    @include breakpoint($no-queries){
+      @include grid-span(9, 1, 12);
+    }
+  }
+
+  .l-sidebar-third{
+    @include breakpoint($no-queries){
+      @include grid-span(3, 10, 12);
+    }
+  }
+}
+
+th.priority-low,
+td.priority-low,
+th.priority-medium,
+td.priority-medium {
+    display: block; 
+}
+
+
+.search{
+  .input-group-btn{
+    @include breakpoint($ie7-queries){
+      width:10%;
+      height:40px;
+    }
+  }
+}
+
+.header-wrap{
+   .form-control {
+      @include breakpoint($ie7-queries){
+          width:300px;
+          height:25px;
+          min-height:25px;
+      }
+   }
+}
+
+.l-footer 
+.mega-footer 
+.block-mega-footer-button 
+.media-body {
+    @include breakpoint($ie7-queries){
+      display: inline;
+      float:left;
+      width:200px;
+    }
+}
+
+.l-footer 
+.mega-footer 
+.block-mega-footer-button 
+.media{
+    @include breakpoint($ie7-queries){
+      display: inline;
+    }
+}
+
+.section-upgrade{
+    .navbar-nav,
+    .main-menu-navigation{
+      @include breakpoint($ie7-queries){
+        background: $white;
+      }  
+    }
+
+    .quarter{
+      @include breakpoint($ie7-queries){
+        width:20%;
+      }
+    }
+}
+
+.menu-top-menu {
+  li{
+     @include breakpoint($ie7-queries){
+       zoom: 1;
+      *display:inline;
+       width:auto;
+    } 
+  }
+}

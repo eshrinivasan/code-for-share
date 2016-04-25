@@ -1,0 +1,381 @@
+/*
+ * Lists
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+/* Override system.menus.theme.css
+ * ------------------------------ */
+
+.menu .leaf {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+
+/* Headers for Lists
+ * ------------------------------ */
+
+h1, h2, h3, h4, h5, h6 {
+    &+dl, &+ol, &+ul {
+        margin-top: 0.5em;
+    }
+}
+
+/* Definition List
+ * ------------------------------ */
+dl {
+    margin: 1.4em 0;
+
+    dd, dt {
+        font-size: 0.875em;
+        line-height: 1.5;
+    }
+    dd {
+        margin-left: 3.8em;
+        margin-top: 0.7em;
+
+        &+dt {
+            margin-top: 0.7em;
+        }
+    }
+    dt {
+        font-weight: bold;
+
+        dfn {
+           font-style: italic;
+        }
+    }
+}
+
+
+
+/* Ordered & Unordered List
+ * ------------------------------ */
+$p: 14px;      // 0.8em for 1.428 line-height
+
+ol {
+    display: block;
+    //margin: 1.4em 0 0.7em 2.8em;
+    padding-left: 0;
+
+    li {
+        margin-top: 0.3em;
+    }
+}
+
+
+.finra-block,
+article {
+    ol, ul {
+      margin: 0;
+      padding: 0;
+
+        h1, h2, h3, h4, h5, h6 {
+            border: 0 none;
+            display: block;
+            margin: 0;
+            padding: $p 0 0;
+
+            &:first-child {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        h1 {
+            padding-top: 0.492em;
+        }
+        h2 {
+            padding-top: 0.581em;
+        }
+        h3 {
+            font-size: 1.3em;       // == 18px
+        }
+        li {
+            font-size: 0.875em;
+            margin-left: 0.9em;
+            margin-top: 0;
+            padding-top: $p;
+
+            li {
+                font-size: 1em;
+            }
+        }
+        p {
+            margin: 0;
+
+            &:first-child {
+                margin: 0;
+            }
+            & + h3 {
+                padding-top: $p;
+            }
+            & + p {
+                margin: 0;
+                padding-top: .625em; //$p;
+            }
+        }
+        &.no-bullets {
+            list-style-type: none;
+
+            li {
+                &:before {
+                    display: none;
+                }
+            }
+            ol, ul {
+                list-style-type: none;
+            }
+        }
+        &.single-spaced {
+            li, p {
+                line-height: 1;
+                padding-top: $p;
+            }
+            li {
+                &:before {
+                    margin-top: -0.05em;
+                }
+            }
+        }
+        &.double-spaced {
+            li, p {
+                line-height: 2;
+                padding-top: $p;
+            }
+            li {
+                &:before {
+                    margin-top: 0.45em;
+                }
+            }
+        }
+    }
+
+    ol {
+      margin-left: 1.2em;
+
+      & > li {
+        // margin-left: 0;
+
+        &:before {
+          display: none;
+        }
+        & > ul {
+            margin-left: 0;
+            padding-left: 2.2em;        // line up with OL LI
+        }
+
+        &:last-child {
+            margin-bottom:1em;          // increase space after last list item
+        }
+        div, p {
+          font-size: 1em;
+          font-weight: normal;
+        }
+      }
+
+      ol {
+        list-style-type: lower-alpha;
+        margin-left: 0;
+
+        ol {
+          list-style-type: lower-alpha;
+
+           &[type="1"]{//DRU-1096
+                list-style-type:decimal;
+                margin-left:0px;
+           }
+           
+           &[type="i"]{//FINRAORG-389
+                list-style-type:lower-roman;
+                margin-left:0px;
+           }
+        }
+
+        &[type="1"]{//DRU-1096
+                list-style-type:decimal;
+                margin-left:0px;
+        }
+
+        &[type="i"]{//FINRAORG-389
+                list-style-type:lower-roman;
+                margin-left:0px;
+        }
+      }
+    }
+}
+
+.block-view-list,
+.finra-block,
+.view-related-links-curated,
+article {
+    ul {
+        list-style-type: none;
+        margin-bottom:1em;
+        margin-left: 0;
+
+        &[class*=inline] {
+            li {
+                border-left: 1px solid $accent-gray-light;
+                margin-right: 0;
+                padding-left: 0.7em;
+                padding-right: 0.7em;
+
+                &:before {
+                    display: none;
+                }
+                &:first-child {
+                    border-left: 0 transparent;
+                }
+            }
+        }
+        &.list-unstyled-links {
+            margin-left: 0;
+            padding-left: 0;
+            list-style-type: none;
+
+            li {
+                border-bottom: 1px dotted $accent-gray;
+                line-height: 1.3;
+                padding: 0.938em 0;
+                margin-left: 0px!important;
+
+                &:before {
+                    display: none;
+                }
+                a {
+                    color: $standard-link;
+
+                    &:hover {
+                        color: $standard-link-hover;
+                    }
+                }
+
+                &.views-row {
+                    padding: 1em 0;
+                    margin: 0;
+                }
+
+                .list-unstyled-item-first {
+                    font-size: 1em;
+                    line-height: 1.5;
+                }
+
+                .views-field-title {
+                    font-family: $sans-serif-stack;
+                    font-size: 1.2em;
+                    line-height: 1.3;
+                    color: $article-text;
+                }
+
+                .field-content {
+                      line-height:1.3;
+                      padding: 0.25em 0;
+                }
+            }
+        }
+        &.pager {
+            li {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        & > li {
+            @include arrow-style;
+
+            font-weight: normal;
+            margin-left: 1.5em;
+
+            &:before {
+                padding-top: 0.05em;
+            }
+
+            & > ul {
+                margin-left: 2.1em;     // align with ol ol
+            }
+            & > h1, 
+            & > h2 {
+                &:first-child {
+                    margin-top: -0.15em;
+                }
+            }
+        }
+    }
+}
+.l-region--sidebar-first, .l-region--sidebar-third {
+  .list-unstyled-links {
+    a {
+      font-size:.875em;
+    }
+  }
+}
+article{
+  ul, ol{
+    padding: 0 2em;
+    margin-left:auto;
+  
+    li ul {
+        margin-left:auto;
+    }
+  }
+}
+table {
+    ol, ul {
+        li {
+            font-size: 1em;
+
+            &:first-of-type {
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+.book-navigation {
+    .menu {     // ul
+        counter-reset: book-counter;
+
+        li {     // li
+            padding-top: 2em;
+
+            &:before {
+                @include red-circle;
+
+                content: counter(book-counter);
+                counter-increment: book-counter;
+            }
+            a {
+                display: inline-block;
+                padding-left: 1.5em;
+                font-family: $serif-stack;
+            }
+        }
+    }
+}
+
+.expandMenu {
+  position: absolute;
+}
+
+.bean-entity-container {
+  &.three-column-list {
+    margin-left:1em;
+
+        .field-colleciont-container {
+          margin-right:1em;
+        }
+        .field-collection-view {
+          font-size: 1.4em;
+          font-family: $sans-serif-stack;
+          border-bottom:none;
+          padding: .5em 0;
+
+          @include arrow-style;
+          &:before {
+            margin-left:-1em;
+            margin-top: .2em;
+          }
+        }
+    }
+}

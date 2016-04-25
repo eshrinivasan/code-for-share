@@ -1,0 +1,279 @@
+ul.quicktabs-tabs.quicktabs-style-finra{
+
+	li a{ 
+		white-space: normal;
+		line-height: 1.2em;
+		padding: 1em 0.7em;
+        font-family: $sans-serif-stack;
+	}
+	li:before {
+	    display:none;
+	}
+
+	
+
+	li.active a,
+	li.active a:visited  {
+		background-color:$tabbed-active;
+		height: inherit;
+		min-height: inherit;
+
+		@include sizeDesktop(){
+	  		background-color:#fff;
+	  		height: 3.05em;
+			min-height: 3.45em;
+			white-space: nowrap;
+	    }
+	}
+
+    li.active a {
+        @include sizeDesktop(){
+            border:1px solid $accent-gray-dark;
+            border-bottom:none;
+            border-radius:0;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            margin: -0.57em 0 0 0;
+        }
+    }
+}
+
+.r-tabs {
+	.r-tabs-nav {
+	    margin: 0;
+	    padding: 0;
+	}
+	.r-tabs-tab {
+	    display: inline-block;
+	    margin: 0;
+	    list-style: none;
+	}
+	.r-tabs-panel {
+	    padding: 15px;
+	    display: none;
+	}
+	.r-tabs-panel.r-tabs-state-active {
+	    display: block;
+	}
+	.r-tabs-accordion-title {
+	    display: none;
+	    a.r-tabs-anchor {
+	    	color: #fff;
+	    	font-size: .8em;
+	    	font-family: $sans-serif-stack;
+	    	width: 100%;
+	    	height: 100%;
+	    	display: block;
+	    	padding: 5px 10px 7px;
+            position: relative;
+            z-index: 2;
+	    	
+	    }
+	}
+	
+}
+
+
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 768px) {
+    .r-tabs .r-tabs-nav {
+        display: none;
+    }
+
+    .r-tabs .r-tabs-accordion-title {
+        display: block;
+        background-color: #025191;
+	    padding: 0px;
+	    border-bottom: 2px solid #fff;
+	  
+    }
+    .r-tabs .r-tabs-accordion-title.r-tabs-state-active:after{
+    	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    	-webkit-transform: rotate(90deg);
+    	-ms-transform: rotate(90deg);
+    	transform: rotate(90deg);
+    }
+    .r-tabs .r-tabs-accordion-title:after{
+    	color: #fff;
+    	content: "\f101";
+    	font-family: FontAwesome;
+    	font-size: 1em;
+    	font-style: normal;
+    	font-weight: normal;
+    	line-height: 1;
+    	padding-left: 5px;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+    	display: inline;
+    	float:right;
+    	float: right;
+    	margin-right: 10px;
+    	margin-top: -25px;        
+        z-index: 1;
+        position: relative;
+    }
+  
+}
+
+
+
+/* Quicktabs - finra theme style
+ * http://drupal.org/project/finra
+ */
+
+.quicktabs_main.quicktabs-style-finra, 
+.quicktabs-ui-wrapper {
+    border: none;
+    clear: both;
+    padding: 0;
+    position: relative;
+    top: -0.1em;
+}
+
+ul.quicktabs-tabs,
+ul.ui-tabs-nav.ui-widget-header{
+    background: #00467e;
+    border:none;
+    border-radius: 0px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra, 
+ul.ui-tabs-nav.ui-widget-header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin: 0.3em 0 0 0;
+    height: 2.35em;
+    min-height: 2.45em;
+    padding-left:2em;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li, 
+ul.ui-tabs-nav.ui-widget-header li {
+    float: left;
+    font-weight: normal;
+    list-style: none;
+    margin: 0 0 0 0;
+    height: 2.65em;
+    min-height: 2.95em;
+    padding: 0;
+    border:none;
+    &:before{
+    	display: none;
+    }
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li.active, 
+ul.ui-tabs-nav.ui-widget-header li.ui-state-active {
+    margin: 0;
+   // border: 1px solid #d3d3d3;
+    border-bottom:0px;
+}
+
+
+ul.quicktabs-tabs.quicktabs-style-finra li a,
+ul.quicktabs-tabs.quicktabs-style-finra li a:visited,
+ul.ui-tabs-nav.ui-widget-header li a,
+ul.ui-tabs-nav.ui-widget-header li a:visited  {
+    float: left;
+    display: block;
+    height: 2.65em;
+    min-height: 2.3em;
+    line-height: 3.35em;
+    padding: 0 1em;
+    text-decoration: none;
+    border-right: 1px solid #eee;
+    font-size: .95em;
+    background: #00467e repeat-x bottom left;
+    color: #fff;
+    position: relative;
+}
+ul.ui-tabs-nav.ui-widget-header li a,
+ul.ui-tabs-nav.ui-widget-header li a:visited{
+	font-size: .85em;
+    height: 3.3em;
+    font-family:$headings-font-family;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li a:hover,
+ul.quicktabs-tabs.quicktabs-style-finra li.active a:hover,
+ul.ui-tabs-nav.ui-widget-header li a:hover,
+ul.ui-tabs-nav.ui-widget-header li.active a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li a:hover,
+ul.ui-tabs-nav.ui-widget-header li a:hover{
+    color: #fff;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li.active a,
+ul.quicktabs-tabs.quicktabs-style-finra li.active a:visited,
+ul.ui-tabs-nav.ui-widget-header li.ui-state-active a,
+ul.ui-tabs-nav.ui-widget-header li.ui-state-active a:visited {
+    height: 3.3em;
+    /*min-height: 3.45em;*/
+    line-height: 3.35em;
+    font-weight: normal;
+    background: none;
+    background-color: #dae3ea;
+    color: #000;
+    /*border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid $accent-gray-dark;
+    border-bottom: 0;
+    margin-top: -7px;
+    padding-bottom: 5px;
+    padding-top: 5px; */
+    font-family:$headings-font-family;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li:last-child a,
+ul.ui-tabs-nav.ui-widget-header li:last-child a {
+    border-right: 0 none;
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li.active a,
+ul.ui-tabs-nav.ui-widget-header li.ui-state-active a {
+   /* border-left: solid 1px #777;*/
+   /* -webkit-box-shadow: -5px -16px 13px -12px rgba(204,204,204,1);
+    -moz-box-shadow: -5px -16px 13px -12px rgba(204,204,204,1);
+    box-shadow: -5px -16px 13px -12px rgba(204,204,204,1);*/
+
+}
+
+ul.quicktabs-tabs.quicktabs-style-finra li a:focus,
+ul.quicktabs-tabs.quicktabs-style-finra li a:active,
+ul.ui-tabs-nav.ui-widget-header li a:focus,
+ul.ui-tabs-nav.ui-widget-header li a:active {
+    outline: none;
+
+}
+
+/* Opera */
+@media all and (min-width: 0px) {
+    body .quicktabs_main.quicktabs-style-finra {
+        top: -0.2em;
+    }
+}
+
+.ui-tabs-panel, .r-tabs {
+  .core-short-title {
+    font-family: $sans-serif-stack;
+  }
+  .more-link {
+    a {
+      font-family: $sans-serif-stack;
+    }
+  }
+
+}
+.ui-tabs-nav, .r-tabs {
+  li {
+    a, a:link, a:active, a:visited {
+      font-family: $sans-serif-stack;
+    }
+  }
+}

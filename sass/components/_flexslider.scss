@@ -1,0 +1,355 @@
+.flexslider {
+  border-top: none;
+  box-shadow: none;
+  margin: 0;
+  border: 4px solid #fff;
+
+  @include breakpoint($desk) {
+    border: 4px solid #E0E8ED;
+  }
+
+  .slides {
+
+    > li {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position:relative;
+
+      img {
+      //  min-height: 100%;
+
+
+         @include breakpoint($tab-portrait) {
+            min-height: 100%;      
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+         @include breakpoint($mdesk) {
+          min-width: 820px;
+        }
+      }
+
+      &:before {
+        display: none;
+      }
+
+      @include breakpoint($tab-portrait) {
+        height: 232px;
+      }
+       
+    }
+  }
+
+  .flex-control-nav {
+    display:none;  //do not display in mobile
+
+    @include breakpoint($tab-portrait) {
+      display: inline-block;
+      width: auto;
+      height: 27px;
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      background: #fff;
+      z-index: 1;
+      text-align: center;
+      padding-right: 1.5em;
+    }
+    @include breakpoint($no-queries) {
+      height: 25px;
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      background: #e1e9ee;
+      z-index: 1;
+      text-align: center;
+      padding-right: 1.5em;
+    }
+    li {
+      padding: 0;
+      margin: 0px;
+      display: inline-block;
+      zoom: 1;
+      background:#e1e9ee;
+      padding:5px!important;
+
+      a  {
+        width: 9px;
+        height: 9px;
+        display: block;
+        background: #0072b5; /*background: rgba(0,0,0,0.5);*/
+        cursor: pointer;
+        text-indent: -9999px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -o-border-radius: 20px;
+        border-radius: 20px;
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+        -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+        -o-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+        box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+
+        &:hover {
+          background: #00507f;
+        }
+        &.flex-active {
+          background: #fe614d;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .flex-control-paging {
+    li {
+      @include breakpoint($tab-portrait) {
+        padding:8px 8px 7px !important;
+        background-color:#fff;
+      }
+      @include breakpoint($no-queries) {
+        background-color:#e1e9ee;
+      }
+      a {
+        @include breakpoint($tab-portrait) {
+          width:14px;
+          height:14px;
+        }
+        @include breakpoint($no-queries) {
+          width:10px;
+          height:10px;
+        }
+      }
+    }
+  }
+  .flex-pauseplay {
+    @include breakpoint($tab-portrait) {
+      z-index: 1;
+      position: absolute;
+      right: 35px;
+      bottom: 0;
+    }
+    @include breakpoint($no-queries) {
+      position: absolute;
+      right: 35px;
+      bottom: 0;
+    }
+
+
+    a {
+      display:none;
+
+      @include breakpoint($tab-portrait) {
+        position: absolute;
+        display:block;
+        height: 27px;
+        width:25px;
+        padding-top: 4px;
+        bottom: 0;
+        right:0;
+        background: #fff;
+        opacity: 9;
+        z-index: 100;
+        overflow: hidden;
+        cursor: pointer;
+        color: #0072b5;
+        padding-left:7px;
+        &:hover {
+          opacity:9;
+        }
+        &.flex-pause:before {
+          font-size:16px;
+        }
+        &.flex-play:before {
+          font-size:16px;
+        }
+      }
+
+      @include breakpoint($desk) {
+        display:block;
+        height:24px;
+        width: 25px;
+        padding-top: 2px;
+        padding-bottom:2px;
+        background-color:#e1e9ee;
+        &.flex-pause:before {
+          font-size:16px;
+        }
+        &.flex-play:before {
+          font-size:16px;
+        }
+      }
+    }
+
+  }
+
+  .flex-direction-nav {
+    display:none;
+    a {
+      display:none;
+    }
+    li {
+    &:before,&:after {
+      display:none;
+      }
+    }
+    @include breakpoint($tab-portrait) {
+      display: none;
+    }
+  }
+
+  .flex-pauseplay {
+    a:before {
+      display: block;
+    }
+  }
+  .flex-control-nav {
+    ol {
+      position: absolute;
+      text-align: center;
+    }
+  }
+
+
+  .carousel-caption {
+    position:relative;
+
+    @include breakpoint($tab-portrait) {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      padding:1em 1em .5em 3em;
+    }
+
+  .trlink {
+
+    a {
+      color: $standard-link;
+      font-size: 1.25em;
+      text-decoration: none;
+      font-weight:bold;
+
+      @include breakpoint($tab-portrait) {
+        background: #fb483d;
+        background-image: -webkit-linear-gradient(top, #fb483d, #f2372c);
+        background-image: -moz-linear-gradient(top, #fb483d, #f2372c);
+        background-image: -ms-linear-gradient(top, #fb483d, #f2372c);
+        background-image: -o-linear-gradient(top, #fb483d, #f2372c);
+        background-image: linear-gradient(to bottom, #fb483d, #f2372c);
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+        font-family: Georgia;
+        color: #ffffff !important;
+        padding: .5em 2em;
+        display:inline-block;
+        font-weight:normal;
+    }
+      &:hover {
+        text-decoration:underline;
+      }
+    }
+   }
+
+    .trbody {
+      font-size: 1.25em;
+      margin-bottom:1em;
+      color:black;
+      @include breakpoint($tab-portrait) {
+        color:#fff;
+      }
+    }
+
+    .transtitle {
+      font-size: 2em;
+      margin-bottom: .2em;
+      font-weight:normal;
+
+      a {
+        color:black;
+        font-weight:normal;
+        @include breakpoint($tab-portrait) {
+          color:#fff;
+        }
+      }
+    }
+
+    &.dark-text {//dark-text styles
+      .transtitle {
+        a {
+          color:#1c1c1c;
+        }
+      }
+      .trbody {
+        color:#1c1c1c;
+      }
+    }
+
+    &.dark-text-light-txt-shadow{//dark-text-light-shadow styles
+      .transtitle {
+        a {
+          color:#1c1c1c;
+          text-shadow: 0px 1px 2px #faf6eb;
+        }
+      }
+
+      .trbody p{
+        color:#1c1c1c;
+        text-shadow: 0px 1px 2px #faf6eb;
+      }
+    }
+
+    &.light-text-dark-txt-shadow{//light-text-dark-shadow styles
+      .transtitle {
+        a {
+          color:#333;
+
+          @include breakpoint($tab-portrait){
+            color:#fff;
+            text-shadow:  0px 1px 2px #333333;
+          }
+
+        }
+      }
+
+      .trbody p{
+        color:#333;
+
+        @include breakpoint($tab-portrait){
+          color:#fff;
+          text-shadow:  0px 1px 2px #333333;
+        }
+      }
+    }
+  }//carousel-caption end
+}
+.view-display-id-industry_home_carousel {
+  .flexslider {
+    border: 4px solid #fff;
+  }
+  .carousel-caption {
+    @include breakpoint($tab-portrait) {
+      padding:2em 1em .5em 3em;
+    }
+  }
+}
+article {
+  .flexslider {
+    .carousel-caption {
+      .trlink {
+        a {
+          font-size: 1.45em;
+        }
+      }
+      .trbody {
+        font-size: 1.45em;
+      }
+      .transtitle {
+        font-size: 2.85em;
+      }
+    }
+  }
+}

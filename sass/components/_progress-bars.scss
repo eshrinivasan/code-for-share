@@ -1,0 +1,37 @@
+$flag-new		:	$accent-green;
+$flag-update	:	$accent-red;
+$img-url		:	url("../images/icons.png");
+
+@mixin flags($c1:$flag-new, $c2:$white, $x:0, $y:0) {
+	background-color: $c1;
+	border: 1px solid $black;
+	color: $white;
+	font-size: 0.8em;
+	padding: 0.2em 0 0.2em 1.3em;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 90px;
+
+	&:before {
+		background: $c2 $img-url no-repeat scroll $x $y;
+		border-right: 1px solid $black;
+		bottom: 0;
+		content: "";
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 21px;
+	}
+}
+/*
+.flag-status-new {	// f185
+	@include flags;
+}
+.flag-status-update {	// f071
+	@include flags($flag-update, $white, 0, -20px);
+}
+*/
+.progress {
+	@extend %clearfix;
+}

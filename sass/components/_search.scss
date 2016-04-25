@@ -1,0 +1,781 @@
+/*
+ * Search on top menu and on the mobile view
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+.page-search .has-sidebar-third .l-content {
+  border-right: none;
+}
+
+.page-search h1.core-title {
+  display: none;
+}
+
+ .search{
+  .input-group{
+    position:relative;
+  }
+
+  .input-group-btn{
+     position:absolute;
+     top:0;
+     right:0;
+     z-index:100;
+     background:transparent;
+     cursor:pointer;
+  }
+ }
+
+.search-form,
+.header-wrap,
+.page-finra-404 {
+ .input-group-btn {
+    white-space: nowrap;
+    display: inline-block;  
+    background: white;
+    line-height: 1;
+
+    .search-submit {
+      background:transparent;
+      padding:0.5em;  
+      position: absolute;      
+      top: 0.1em;
+      right: 0;
+      width: 100%;
+      height: 36px;
+      border:none;
+    }
+
+    .fa-search{
+      width: 100%; 
+      height:36px;
+      padding:0.6em; 
+      position:relative;
+      cursor:pointer;
+    }
+  }
+}
+
+#search-form {margin-bottom:1em;}
+
+
+.header-wrap{
+  /*search on non homepage header*/
+  .branding-dropdown{
+    .search{
+      .input-group{
+        display:none;
+
+        @include breakpoint($no-queries){
+          display:block;
+          float:right;
+        }
+
+        @include breakpoint($desk){
+          display:block;
+          float:right;
+        }
+
+      }
+    }
+  }
+
+  
+  .form-control {
+      @include form-elements;
+      box-shadow: none;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 2;
+      font-size:0.813em;
+      padding: 0 0.313em;
+
+      &::-moz-placeholder{
+        color: #999;
+      }
+
+    
+      @include breakpoint($no-queries){
+        display:block;
+        float:left;
+        padding:0.313em;
+        width:300px;
+        font-size:0.913em;
+      }
+
+      @include breakpoint($desk){
+        padding-top:0.313em;
+        width:300px;
+      }
+  }
+
+}
+
+
+.gbl-search.main-nav-mobile{    
+    .sb-search {
+      position:relative;
+      width: 0%;
+      min-width: 60px;
+      height:50px;
+      float: right;
+      overflow: hidden;
+      -webkit-transition: width 0.3s;
+      -moz-transition: width 0.3s;
+      transition: width 0.3s;
+      -webkit-backface-visibility: hidden;
+
+      @include breakpoint($tab-portrait){
+         height: 86px;
+         min-width: 100px;
+         margin:0;
+      }
+
+      &.sb-search-open{
+          width:100%;
+
+          .sb-icon-search{
+            color: $white;
+            z-index: 11;
+          }
+
+          .sb-search-submit{  
+            z-index: 90;
+          }
+      }
+    }
+
+    .no-js .sb-search .sb-search-submit {
+          z-index: 90;
+    }
+
+    .no-js .sb-search .sb-icon-search {
+          color: $white;
+          z-index: 11;
+    }
+
+    .sb-search-open{
+      .sb-search-input{        
+       // width:60%;
+         -webkit-transition: width 0.3s;
+         -moz-transition: width 0.3s;
+         transition: width 0.3s;
+         -webkit-backface-visibility: hidden;
+      }        
+    }
+
+    .sb-search-input {
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: 1px solid $global-blue;
+          outline: none;
+          background: $white;
+          width: 100%;
+          height:50px;
+          margin: 0;
+          z-index: 10;
+          padding: 0.5em;
+          font-family: inherit;
+          color: #2c3e50;      
+
+          @include breakpoint($tab-portrait){
+             height: 80px;
+          }
+        //  @media print{display: none;}
+    }
+
+    .sb-search-input::-webkit-input-placeholder {
+      color: $main-nav-blue;
+    }
+
+    .sb-search-input:-moz-placeholder {
+      color: $main-nav-blue;
+    }
+
+    .sb-search-input::-moz-placeholder {
+      color: $main-nav-blue;
+    }
+
+    .sb-search-input:-ms-input-placeholder {
+      color: $main-nav-blue;
+    }
+
+    .sb-icon-search,
+    .sb-search-submit  {
+      width: 60px;
+      height:50px;
+      line-height: 50px;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      cursor: pointer;
+
+      @include breakpoint($tab-portrait){
+        height: 86px;
+        line-height: 86px;
+        width:100px;
+      }
+    }
+
+    .sb-search-submit {
+      background: $white; /* IE needs this */
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+        filter: alpha(opacity=0); /* IE 5-7 */
+        opacity: 0;
+      color: transparent;
+      border: none;
+      outline: none;
+      z-index: -1;
+    }
+
+    .sb-icon-search {
+      color: $white;
+      background: $pale-blue;
+      z-index: 90;
+      font-size: 1.5em;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;      
+      @include switch-to-mobile;
+    //  @media print{
+    //    display: none;
+    //  }
+    }
+
+    .sb-icon-search:before {      
+      @include fontAwesome("\f002", $main-nav-blue); 
+      @include breakpoint($tab-portrait){
+        color: $white;
+        margin:0;
+      }
+      @include sizeDesktop(){
+        color: $white;
+      }     
+    }
+
+    /* Open state */
+ 
+    .no-js .sb-search {
+      width: 100%;
+    }
+
+ 
+}
+
+#sb-search{
+   .globalReset{
+        @extend %globalReset;
+   }
+}
+
+/*Blocks on the search page*/
+
+ul.facetapi-facetapi-links,
+ul.facetapi-facetapi-checkbox-links{
+    list-style-type: none;
+    padding-left:0;
+
+    ul{
+       padding-left:0.313em;
+    }
+
+    li.leaf{
+      line-height:2;
+
+      a{
+        margin-left:5px;
+        font-size:0.75em;
+        color:$black;
+      }
+    }
+}
+
+.filter-date-lrail{
+  .pane-title {
+    margin-top: 0;
+    background-color: #c5cfd7;
+    padding: 5px 7px 3px;
+    border-left: none !important;
+  }
+  .date-link {
+    color: #025191;
+    font-size:1em
+  }
+}
+
+article{
+    ul.search-results{
+      padding:0;      
+    }
+
+    .search-result{
+      border-bottom: 1px dotted #b4b4b4;
+      padding:1em 0em;
+      margin:0;
+
+      &:before{
+        display:none;
+      }
+
+      h2, h3{
+        margin:0;
+        font-size:1.000em;
+        font-family: $serif-stack;
+        font-weight:normal;
+
+        a {
+          margin:0;
+          font-size:1em;
+          font-family: $serif-stack;
+          color:$standard-link;
+        }
+      }
+
+      h2 {
+        font-size:1.325em;
+      }
+
+      .search-snippet{
+        font-size:0.875em;
+      }
+
+      .search-result__snippet{
+        padding-left:0;
+      }
+
+      .search-result__info{
+        color:$accent-red;
+      }
+      .search-result-link{
+        color:#828181;
+      }
+      .core-official-date{
+        color:$accent-gray-dark;
+        font-size:0.875em;
+        padding-top:.3em;
+      }
+
+      .page-url a {
+        color:$accent-green;
+        line-height:1.8;
+      }
+  }
+
+}
+
+.l-search-content {
+  width: 66.19718%;
+  float: left;
+  margin-right: -100%;
+  margin-left:0;
+  clear: none;
+  box-sizing: border-box;
+}
+
+.search-rec-result{
+      background-color: #eef8e5;
+      margin:1em 0 .5em;
+      padding:0.5em 0.5em;
+      border:1px solid #b5cb9a;
+
+      h2, h3 {
+          font-family: $headings-font-family;
+          padding:.5em .3em 0;
+          margin-bottom:.3em;
+          font-weight:normal;
+
+          .keymatch {font-weight:bold;}
+        }
+  }
+
+.results-main-count {
+  color:$accent-gray-dark;
+  margin:1em 0;
+}
+
+.rec-result{
+    h2, h3{
+      margin: 0 0 .625em;
+      font-size: 1.000em;
+      line-height: 1.2;
+
+      }
+    }
+
+  .rec-h4{
+        font-size:12px;
+        color:#434343;
+        font-family:$serif-stack;
+        font-size:12px;
+        font-weight: bold;
+        margin:0px;
+        text-align:center;
+      }
+
+      .rec__snippet{     
+        padding:0 15px;
+        margin:0;
+        font-family: Arial, sans-serif;
+      }
+
+      .search-result__info{
+        color:$accent-red;
+      }
+      
+    .result-date {
+      font-size:14px;
+      color:$accent-red;
+    }
+    .result-url {
+      font-size:14px;
+      color:#808587;
+    }
+    .page-url {
+      font-size:0.875em;
+      a{
+        color:$accent-gray-dark;  
+      }      
+    }
+    .rec-label {
+      font-family: $headings-font-family;
+      padding:0.625em;
+      background-color:#ccebb4;
+      float:right;
+      margin-top:-8px;
+      margin-right:-8px;
+    }
+
+    .bcsearchul {
+      .pane-title {
+        margin-top: 0;
+        background-color: #c5cfd7;
+        padding: 0.625em 0.38em;
+        border-left:none!important;
+        font-weight:normal;
+      }
+
+      li.nostyle {
+        padding-left: .38em;
+        margin-top: .35em;
+      }
+    }
+
+    #link_relevance {
+      padding:0 0.625em;
+      border-right: #c0c5c8 solid 1px;
+
+    }
+
+    #link_date_desc {
+      padding: 0 0.625em;
+      /*border-right: #c0c5c8 solid 1px;*/
+    }
+
+    #link_date_asc {
+      padding: 0px 1%;
+      border-right: #c0c5c8 solid 1px;
+    }
+
+    .sort-container {
+      border: none;
+      font-size:0.8em;
+      padding:0.625em 0;
+      margin:0;
+      /*border-top:1px dotted #c0c5c8;*/
+
+      .fieldset-wrapper{
+        font-weight:bold;
+
+        a{
+          font-weight:normal;
+
+          &.activeSort {
+            font-weight:bold;
+          }
+        }
+      }
+    }
+
+.block--facetapi{
+    background:$global-blue;    
+
+    /*&.pane-accordian{
+       .block__content{
+         display:none;
+         padding:0.625em;
+        }
+
+         @include breakpoint($tab-landscape){
+           display:block;
+         }
+
+         @include sizeDesktop(){
+            display:block;
+        }
+    }*/
+
+    .block__content{
+      display:block;
+      padding:0.315em;
+
+      @include breakpoint($tab-landscape){
+        display:block;
+      }
+      @include breakpoint($no-queries){
+        display:block;
+      }
+    }
+
+}
+
+.search-form{
+  padding:1em;
+  margin:0.25em 0;  
+  background:$global-blue;
+
+  aside &{
+    padding:0;
+    background:transparent;
+  }
+
+  h2{
+    font-size:1.5em;
+    padding:0.5em 1.25em .5em 0;
+    vertical-align:middle;
+  }
+
+  h2,.form-item{
+    display:inline;
+  }
+
+  .input-group{
+    position:relative;
+
+    .form-text{
+      font-family: $serif-stack;   
+      padding:0 25px 0 10px;
+      width:100%;
+
+        &::-ms-clear {
+          display: none;
+          width : 0;
+          height: 0;
+        }
+
+       .page-search &{
+          @include breakpoint($tab-portrait){
+              width:56%;
+          }
+
+           @include breakpoint($tab-landscape){
+              width:62%;
+          }
+
+          @include sizeDesktop(){        
+              width:66%;
+          }
+
+          @include breakpoint($lg-desk){
+              width:73%;
+          }
+       }
+      
+    }
+  }
+
+  .input-group-btn{
+    position:absolute;
+    top:-0.6em;
+    right:0;
+    z-index:1;
+    background:transparent;
+  }
+
+  .form-select{
+    font-family: $serif-stack;
+    width:100%;
+    
+    @include breakpoint($tab-portrait){
+          width:auto;
+      }
+
+     @include breakpoint($no-queries){
+          width:auto;
+      }
+  }
+}
+
+.apachesolr-sort-sort-form- {
+  .sort-container {
+    padding: .625em 0 0 0;
+  }
+  .form-actions {
+    margin-bottom:0;
+  }
+}
+
+.block--finra-custom-search-blocks.block--finra-custom-search-blocks-recommended-content {
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #e0e0e0;
+  margin: .8em 0;
+  padding: .5em;
+  background-color: #fafafa;
+  border: solid 1px #e0e0e0;
+
+  .item-list > h2 {
+
+      font-size: 0.875em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $accent-gray-dark;
+
+  }
+  ul.list-unstyled-links {
+    padding:0;
+
+    li {
+      border-bottom:none;
+      padding:.2em 0;
+
+      h2.title {
+        font-size:1.5em;
+      }
+
+      .page-url {
+        font-size:1em;
+        line-height:1.8em;
+
+        a {
+          color:$accent-green;
+        }
+      }
+    }
+  }
+}
+
+.ui-autocomplete.fnrw_search {
+  li.ui-menu-item {
+    a.ui-state-hover  {
+      color: #fff !important;
+        div.s4_category {
+          color:#535353 !important;
+        }
+        div.s4_item-field-cover {
+          background: $typeahead-hover;
+        }
+
+      .s4_suggestion {
+        background: $typeahead-hover;
+      }
+    }
+
+    a {
+      padding: 0;
+    }
+  }
+}
+
+.ui-autocomplete.fnrw_search {
+  .s4_item-field {
+    font-size:12px;
+    font-weight:normal;
+    &:hover {
+
+    }
+  }
+}
+  .ui-autocomplete.fnrw_search {
+
+    .s4_category {
+      background-color: $left-nav-header;
+      font-weight: bold !important;
+      color: #535353 !important;
+      font-size: 1em !important;
+      border-bottom: solid 1px #ccc;
+
+      &:hover {
+
+      }
+
+
+    }
+    .s4_suggestion {
+       padding:0;
+
+
+
+
+      .s4_item-field-cover {
+        padding: .675em 1.5em;
+        font-size: .875em;
+        &:hover {
+          color: #fff !important;
+          background: $typeahead-hover;
+
+        }
+
+      }
+    }
+  }
+
+.ui-autocomplete {
+  li.ui-menu-item a {
+    .s4_item-field strong {
+      background-color: #dcdcdc !important;
+      color:#292929 !important;
+      padding: 2px;
+    }
+  }
+}
+
+.block--finra-custom-search-blocks.block--finra-custom-search-blocks-finra-rules-search-block {
+  h2 {
+    font-size: 1.2em;
+    padding: 0.56em 1.125em;
+  }
+  + .viewMoreLink {
+    font-size: .8em;
+    margin-bottom: 2em;
+    margin-left: .75em;
+    display: inline-block;
+  }
+}
+.finra-rules.list-unstyled-links {
+  a {
+    font-size:1.1em;
+  }
+}
+.block--apachesolr-sort {
+  border-bottom:solid 1px #e0e0e0;
+  margin-top: 1.5em;
+  padding-bottom: .2em;
+
+  .sort-container {
+    float:left;
+    width:50%;
+    text-align:right;
+    padding:0;
+    margin:0;
+  }
+  .results-main-count {
+    font-size:.8em;
+    float:left;
+    width:50%;
+    padding:0;
+    margin:0;
+  }
+}
+.block--finra-custom-search-blocks-finra-results-header-block
+{
+  h2 {
+    font-size:1.325em;
+  }
+}

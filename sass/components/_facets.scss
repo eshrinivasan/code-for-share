@@ -1,0 +1,84 @@
+.page-arbitration-and-mediation-arbitration-awards-online-view, .page-arbitration-and-mediation-arbitration-awards-online {
+  .block--facetapi {
+    .block__content {
+      padding-left: .5em;
+    }
+  }
+
+.facetapi-facet-dm-field-core-official-dt {
+  .form-item {
+    label {
+      display:none;
+    }
+  }
+  .form-type-textfield {
+    display:inline-block;
+    width:48%;
+
+    &::after {
+      display:none;
+      background:none;
+    }
+
+    input {
+      display:inline;
+      font-size:.8em;
+    }
+
+  }
+  .form-item-min-display {
+
+      &::after {
+        content: 'To';
+        display: inline;
+        width:20px;
+        margin-top:12%;
+        background: none;
+        font-size:.75em;
+      }
+  }
+}
+
+.block--facetapi {
+  .block__title {
+    padding: 0.56em .75em;
+  }
+}
+
+.facetapi-facetapi-date-range {
+  input#edit-min-display {
+    width: 80%;
+    display:inline;
+  }
+  .form-item-min-display {
+    width: 55%;
+    float:left;
+  }
+  .form-item-max-display {
+    width: 44%;
+    float:left;
+  }
+  .facetapi-date_range-max {
+    width:98%;
+  }
+}
+
+.facetapi-processed {
+  .facetapi-checkbox {
+    margin-right:.4em;
+  }
+  li {
+    font-size:.875em;
+  }
+}
+
+}
+.block--current-search-reset-filters-doppler {
+  h2 {
+    display:none;
+  }
+  .current-search-item.reset-link {
+    text-align: right;
+    margin: 1em .5em;
+  }
+}

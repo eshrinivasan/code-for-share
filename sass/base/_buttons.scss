@@ -1,0 +1,120 @@
+/*
+ * Buttons
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+button, .btn, #edit-cancel, input[type=button], input[type=reset], input[type=submit], .print_html, .compare-block-links:first-child {
+    @include colorgradient;
+
+	border: 0 none;
+	border-radius: 7px;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $serif-stack;
+	font-size: 0.9em;
+	font-weight: normal;
+	letter-spacing: 0.05;
+	line-height: 1.2;
+    margin: 2px 0;
+	padding:0.7em 0;
+	position: relative;
+	text-align: center;
+	text-shadow: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 100%;
+
+	&:first-child {
+		margin: 0;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+    a:link,
+    a:visited,
+    a:hover{
+    	text-decoration: none;
+    	color: $white;
+    }
+
+	@include breakpoint($tab-portrait) {
+		border: 1px solid $accent-red-gradient;
+		border-radius: 0;
+		padding: 0.5em 1.4em;
+
+		&:hover {
+			@include colorgradient($accent-red-hover, $accent-red-gradient-hover);
+
+			border-color: $accent-red;
+		}
+	}
+    @include breakpoint($desk) {
+        border: none;
+		font-size: 0.85em;
+		letter-spacing: 0.5px;
+        margin: 0 0.25em;
+        width: auto;
+        border-radius: 0;
+	}
+
+	@include breakpoint($no-queries){
+		padding:0.7em;
+	}
+}
+
+
+.btn {
+  padding: 0.625em;
+  margin: 0.625em 0;
+
+  &:first-child{
+  	margin:0.625em 0;
+  }
+}
+
+.btn-lg {
+  font-size: 0.9em;
+  height:1.5;
+  display:block;
+  clear:both;
+  width:100%;
+}
+
+.bigButton {
+	font-size: 0.9em;	
+	height:1.5;
+	text-transform:uppercase;
+	width:100%;
+}
+.compare-block-links:first-child {
+  color:#fff;
+}
+.podcast-standard-links {
+	span {
+		padding-right: 2em;
+	}
+}
+
+.podcast-standard-links {
+	span {
+		padding-right: 2em;
+	}
+}
+
+.more-link {
+	@include redlink;
+
+	a {
+        &:link{
+          color: $accent-red;
+        }
+
+		&:hover {
+			color: $accent-red;
+		}
+	}
+}

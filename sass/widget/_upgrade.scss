@@ -1,0 +1,135 @@
+.buorg {
+	background:$upgrade-background;	
+	width:100%;
+
+	.alert{
+		background:$upgrade-icon-alert;
+		position:absolute;
+		top:8px;
+		left:10px;
+		width:36px;
+		height:36px;
+	}
+
+	#buorgclose{
+		top:8px;
+		right:12px;
+		width:33px;
+		height:33px;
+		position:absolute;
+		background:$upgrade-icon-close;
+	}
+
+	div {
+		padding: 5px 36px 5px 55px;	
+		margin-left:5px;	
+	}
+
+	 p.heading2{
+		font-size:14px;
+	    font-weight:bold;
+	}
+
+	a, 
+	a:visited{
+		font-weight:bold;
+	}
+}
+
+html>body .buorg div {
+	margin-left:20px;
+}
+
+#co {
+	margin: auto;
+	text-align: left;
+	position: relative;
+
+	.whatnow {
+		text-align: left;
+		margin: 20px 0;
+	}
+
+	.noti {
+		margin: 47px 0;	
+		border: 1px solid #d6d6d6;
+		background: #fbfbfb;
+	}
+
+	.logos {
+		width: 100%;
+		border: none;
+
+		td {
+			vertical-align: top;
+			padding: 10px;
+			border: none;
+			background: none;
+			width: 25%;
+		}
+
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		margin-bottom: 0.8em;
+		clear: both;
+	}
+
+	a.l {
+		display: block;
+		padding: 4px;
+		padding-top: 110px;
+		background-repeat: no-repeat;
+		background-position: center top;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.bf a {
+		background-image: $upgrade-icon-firefox;
+	}
+
+	.bs a {
+		background-image: $upgrade-icon-safari;
+	}
+
+	.bc a {
+		background-image: $upgrade-icon-chrome;
+	}
+
+	.bi a {
+		background-image: $upgrade-icon-ie;
+	}
+
+	.advantages {
+		margin-left: 5px;
+		padding: 0;
+	}
+
+	.advantages li {
+		margin-bottom: 1.5em;
+		padding-left: 20px;
+		background-repeat: no-repeat;
+		background-position: left top;
+	    font-size:12px;
+	}
+
+	ul.advantages,
+	ul.advantages li{
+		list-style:none;
+	    list-style-type:none;
+	    list-style-image:none;
+	}
+
+	a,
+	a:link{
+		border-bottom:none;
+		font-weight:bold;
+		text-decoration:underline;
+	}	
+
+}
+
+

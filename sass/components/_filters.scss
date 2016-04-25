@@ -1,0 +1,473 @@
+/*
+ * Checkbox filter, Select dropdown filters
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+ %arrow-toggle{
+    &:before {
+      @include fontAwesome("\f078", $white);
+      background-color: $footer-button;
+      border-radius: 1em;
+      font-size: 0.85em;
+      padding: 0.2em 0.3em 0.3em;
+    }
+
+    &.hidden {
+      &:before {
+        @include fontAwesome($color:$white);
+      }
+    }
+
+    @include breakpoint($desk) {
+      &:before {
+        display: none;
+      }
+    }
+
+    @include breakpoint($no-queries) {
+      &:before {
+        display: none;
+      }
+    }
+}
+
+.l-region--sidebar-first {
+  //@media print{
+  //  display:none;
+ // }
+
+  .form-select {
+    width: 100%;
+
+    option {
+      width: 100%;
+    }
+  }
+
+  .block--facetapi,
+  .block--menu-block,
+  .views-exposed-filter-form {
+    .block__title {
+      @extend %block-header;
+    }
+  }
+
+  #block-views-exp-notices-page {   // Notices
+    padding:0;
+    .block__content {
+      @extend %block-header;
+      background-color: $global-blue;
+      font-weight: normal;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      display:none;
+
+      @include sizeDesktop(){
+        display:block;
+      }
+    }
+    /*.form-item-combine {   // Div containing Search Notices input field
+      @include icon-in-field;
+
+      #edit-combine {
+        padding-right: 1.75em;    // Make room for seach icon
+      }
+    }*/
+  }
+
+
+  #edit-field-notice-publish-dt-value-value {
+    width: 100%;
+  }
+
+  .finra-checkbox-facetapi{
+      label.option{
+        font-size: 0.75em;
+        margin-left: 0.625em;
+        width: 75%;
+        line-height: 1.5em;
+        display:inline-block;
+      }
+
+      .form-type-checkbox{
+        line-height:2;
+        margin:0;
+      }
+  }
+
+  %facetapi-checkbox{
+          background: $white;
+          border-collapse: separate;
+          float: left;
+          height: 25px;
+          position: relative;
+          width: 25px;
+         -webkit-box-shadow: inset 0 1px 2px 1px #cccccc;
+          /* -moz-box-shadow: 0 1px 2px 1px #cccccc;
+          box-shadow: inset 0 1px 2px 1px #cccccc;*/
+          -webkit-appearance: none;
+          -moz-appearance: none;
+
+          &.checked:before,
+          &:checked:before {
+            @include fontAwesome("\f00c", $accent-red);
+            position: absolute;
+            display: block;
+            left: 4px;
+            top: 4px;
+            font-size: 18px;
+          }
+  }
+
+  .facetapi-checkbox {
+    @extend %facetapi-checkbox;
+  }
+
+  .views-exposed-form {
+    .views-exposed-widget {
+      @extend %block-header;
+      background-color: $global-blue;
+      border-top: 1px dotted $accent-gray;
+      color: $standard-text;
+      padding-bottom: 0.75em;
+      padding-top: 0.75em;
+      position: relative;
+      width: 100%;
+      list-style: none;
+      clear: both;
+
+      &:first-child {
+        border-top: 0 none;
+      }
+      #edit-flagged{
+        .form-item-flagged{
+          display: inline;
+          padding: 5px 0 5px 15px;
+        }
+      }
+      label {
+        display: inline-block;
+        font-family: $sans-serif-stack;
+        padding-bottom: 0.5em;
+
+        &.option {
+          background: transparent;
+          display: list-item;
+          font-weight: normal;
+          line-height: 1.5;
+          padding: 5px 0 5px 35px;
+          position: relative;
+          top: 0.2em;
+        }
+
+
+
+        .form-type-radio{
+          &.option {
+            display: inline;
+          }
+        }
+        @include breakpoint($desk) {
+          font-size: 0.8em;
+        }
+      }
+
+      input {
+        &[type="checkbox"] {
+           @extend %facetapi-checkbox;
+           margin: 5px 10px 5px 0;
+        }
+        &[type="text"] {
+          font-size: 0.95em;
+        }
+        &[type="radio"] {
+          padding: 5px 0 5px 10px;
+        }
+
+
+        @include breakpoint($desk) {
+          &[type="text"] {
+            font-size: 0.7em;  // See dru-1419
+          }
+        }
+      }
+
+      .form-submit {
+        font-size: 0.95em;
+        margin-top: 0;
+      }
+
+      #edit-reset {
+        background:none;
+        text-decoration:none;
+        color: #025191;
+        padding: 0;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:link, &:visited {
+          color: #025191;
+        }
+
+        &:active, &:hover {
+          color: #0070ca;
+          text-decoration: underline;
+        }
+      }
+
+      .bef-checkboxes{
+        list-style: none;
+
+        input[type="checkbox"] {
+          margin: 0;
+        }
+
+        label {
+          &.option{
+            top: 0;
+          }
+        }
+      }
+
+      .bef-toggle{
+        display: inline-block;
+        font-family: $sans-serif-stack;
+        padding: 0 0 5px;
+        position: relative;
+        width: 100%;
+
+        &:after {
+          border-bottom: 1px dotted $accent-gray-dark;
+          content: "";
+          display: block;
+          height: 2px;
+          padding: 0 1em 5px;
+          width: 100%;
+        }
+
+        @include breakpoint($desk) {
+          font-size: 0.8em;
+        }
+        @include breakpoint($lg-desk) {
+          position: absolute;
+          right: 1.5em;
+          top: 1.1em;
+          width: auto;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .bef-tree {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          clear: both;
+        }
+      }
+
+      .bef-tree-child {
+        list-style: none;
+        padding: 0;
+
+        .bef-tree-child {
+          padding: 0 20px;
+        }
+      }
+
+      .bef-tree-depth-2 {
+        display: none;
+
+        @include sizeDesktop() {
+          display: block;
+        }
+      }
+
+      .bef-tree-depth-0 {
+        .bef-all-none-nested-processed {
+          .option {
+            &:before {
+              @include fontAwesome("\f068", $main-nav-blue);
+            }
+          }
+        }
+
+        .bef-tree-depth-1 {
+          .option {
+            &:before {
+              display:none;
+            }
+          }
+
+          .bef-all-none-nested-processed {
+            .option {
+              &:before {
+                @include fontAwesome("\f068", $main-nav-blue);
+              }
+            }
+          }
+        }
+
+        .bef-tree-depth-2 {
+          li {
+            &.bef-all-none-nested-processed {
+              > .option {
+                &:before {
+                  @include fontAwesome("\f068", $main-nav-blue);
+                }
+              }
+            }
+          }
+
+          .bef-tree-depth-3 {
+            // display:none;
+            .option {
+              &:before {
+                display:none;
+              }
+            }
+          }
+        }
+
+        .bef-tree-child {
+          .bef-all-none-nested-processed {
+            .option {
+              &:before {
+                @include fontAwesome("\f068", $main-nav-blue);
+              }
+            }
+          }
+        }
+      }
+
+      .bef-tree-depth-1 {
+        .bef-all-none-nested-processed{
+          .option{
+            &:before{
+              @include fontAwesome("\f068", $main-nav-blue);
+            }
+          }
+        }
+      }
+    }
+    .views-submit-button {
+      display:none;
+    }
+  }
+}
+
+.form-item {
+  .container-inline-date  {
+    margin: 0;
+    width: 100%;
+  }
+}
+.date-padding {
+  width: 100%;
+}
+
+.container-inline-date .form-item,
+.container-inline-date .form-item input {
+  width: 100%;
+}
+
+.view-news-release,
+.block--views-exp-news-release-page,
+.views-exposed-form-speeches-and-testimony-speech-search,
+.ctools-auto-submit-full-form {
+
+  .views-exposed-widget {
+    width:99%;
+  }
+  .views-exposed-form {
+    padding:.2em .5em;
+    background-color:$global-blue;
+  }
+  /*
+  .views-widget {
+    width:83%;
+    display:inline-block;
+  }
+  .form-item-combine {
+    @include icon-in-field;
+  }*/
+}
+
+
+
+
+/*Filter on the Podcast Index*/
+.form-type-select {
+  //overflow: hidden;
+
+  .form-select {
+    //width: 132%;    // select hack for IE8
+  }
+
+  .form-type-bef-link {
+     margin: 10px 0;
+     font-size: 0.913em;
+  }
+
+  select {
+      font-size: 0.75em;
+      &:after{
+        @extend %dropdown-arrow;
+      }
+  }
+
+}
+
+.views-exposed-filter-form {
+  .block__title {
+    @extend %arrow-toggle;
+  }
+}
+
+.block--facetapi{
+  .block__title {
+    @extend %arrow-toggle;
+  }
+}
+
+.block--menu-block{
+  .block__title {
+    @extend %arrow-toggle;
+  }
+}
+
+#block-views-exp-aao-solr-page .block__content {
+  display: block !important;
+}
+
+.page-arbitration-and-mediation-arbitration-awards-online-view, .page-arbitration-and-mediation-arbitration-awards-online {
+
+  .views-exposed-form .views-exposed-widget {
+    .form-item-keyword {
+      input[name="keyword"] {
+        font-size: .875em;
+      }
+    }
+  }
+  .facetapi-facetapi-date-range {
+    .form-type-textfield {
+      margin-bottom: .5em;
+    }
+    input[type="submit"] {
+      @include breakpoint($desk) {
+        left:9em;
+      }
+      @include breakpoint($lg-desk) {
+        left: 13em;
+      }
+    }
+  }
+}

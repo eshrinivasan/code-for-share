@@ -1,0 +1,122 @@
+/**
+  Output has Media queries but no .lt-ie9 and .no-mq fallbacks
+  https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks
+**/
+
+
+// Import external libraries.
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit-no-css";
+
+
+
+@import "variables/**/*";		// project specific variables
+@import "abstractions/**/*";    //mixins, placeholders
+
+//wrapping all styles in the finra_normalize_prefix helps target the css to 
+//the header, footer and responsive insert, and avoids styling elements on the clients page
+.finra_normalize_prefix{
+	@import "base/**/*";
+	@import "components/**/*";
+}
+
+//this class can be used by the client to create a container that collapses 
+//at the $desk and $tab breakpoints (see below)
+.finrabrand_container {
+	margin: 0px auto;
+	width: 100%;
+	float: left;
+	margin-right: -100%;
+	margin-left: 50%;
+	clear:none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	@include sizeDesktop(){
+		width:100%;
+		clear:both;
+	}
+}
+
+
+.finrabrand_container{
+  @extend %single-transition;
+
+  .js & {
+    margin-left: 0;
+    float: left;
+    z-index: 1;
+  }
+
+  .active & {
+    margin-left: 75%;
+    @include single-transition(left, .3s, ease-out, 0s);
+    -webkit-backface-visibility: hidden;
+
+     @include breakpoint($tab-portrait){
+       @include grid-span(6, 4, 6, 0);
+     }
+  }
+
+  @include sizeDesktop(){
+    @include grid-span(12, 1, 12);
+    clear:both;
+  }
+}
+
+.finra_normalize_prefix{
+	.menu-top-menu li:last-child a{
+		color:$accent-red;
+		font-weight:bold;
+
+		.active &{
+			color: $white;
+		}
+	}
+}
+
+
+
+.finrabrand_container{margin:0px auto} 
+@media (min-width: $desk) {.finrabrand_container{width:960px !important;margin: 0 auto !important; float: none  !important; clear:both}}
+@media (min-width: $lg-desk) {.finrabrand_container{width:1200px !important;margin: 0 auto !important; float: none  !important;clear:both }}
+#FINRA_footer.finrabrand_container{width:100% !important; margin-right:0px !important}
+
+//this class is add because the nesting in drupal does not allow for this rule to apply.
+@media (min-width: $desk) {.navbar-offcanvas{position:absolute}}
+
+.search-block-global-search-form {
+  span.input-group-btn {
+	font-size:1em;
+	width:10%;
+  }
+}
+
+/*Turning search off for v3 finrabrand plugin*/
+.l-region--header-second{
+  .block--search-block{
+    &.globalSearchOn{
+      display:block;
+    }
+
+    &.globalSearchOff{
+      display:none;
+    }
+  }
+}
+
+.l-header{
+  .navbar-header{
+    .gbl-search{
+      &.globalSearchOn{
+        display:block;
+      }
+
+      &.globalSearchOff{
+        display:none;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.notice-core-title{
+  color: $accent-red;
+  font-family: $sans-serif-stack-75;
+  font-size: 0.875em;
+  font-weight: bold;
+}
+
+.block-core-title {
+  border-bottom: 1px solid $accent-gray;
+  font-family: $serif-stack;
+  font-size: 1.15em;
+  margin-top:1em;
+  margin-bottom: 0;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+  font-weight:normal;
+
+  @include breakpoint($no-queries) {
+    font-size: 1.125em;
+    border-bottom: 3px solid $accent-gray;
+    margin-top:1.25em;
+  }
+
+  @include breakpoint($desk) {
+    font-size: 1.125em;
+    border-bottom: 3px solid $accent-gray;
+    margin-top:1.25em;
+  }
+
+  
+}
+
+.content-background{
+  background-color: $global-blue;
+}

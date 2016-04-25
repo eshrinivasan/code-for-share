@@ -1,0 +1,32 @@
+.front {
+  .hero-top {
+    background-color:#fff;
+    padding-bottom:1em;
+    @include breakpoint($desk) {
+      background-color:#E0E8ED;
+    }
+  }
+
+  .l-region--hero {
+      .view-flexslider-features-view {
+        position:relative;
+        width:100%;
+        margin:0;
+
+        @include breakpoint($desk) {
+          width:74%;
+          float:left;
+          margin-right:1em;
+       }
+      }
+      .block--finra-custom-blocks-broker-check-widget-block {
+        position:relative;
+        width:100%;
+        @include breakpoint($desk) {
+          width:24%;
+          float:left;
+        }
+      }
+    }
+}
+

@@ -1,0 +1,14 @@
+/*
+ * 2 column container
+ * --------------------------------------------------
+ * Mobile first
+ */
+
+.multicolumn-container {
+  @extend %two-column-container;
+  min-height:7.438em;
+
+  @include sizeDesktop(){
+    min-height: 9.438em;
+  }
+}
